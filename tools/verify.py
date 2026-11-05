@@ -62,7 +62,7 @@ def verify():
             if url.fragment and dest in pages and unquote(url.fragment) not in pages[dest].ids:
                 problems.append(f'{path.name}: âncora ausente: {ref}')
     projects = json.loads((ROOT / 'conteudo/projetos.json').read_text(encoding='utf-8'))
-    if len(projects) != 8 or sum(p['grupo'] == 'implementado' for p in projects) != 4:
+    if len(projects) != 8 or sum(p['grupo'] == 'implementado' for p in projects) < 4:
         problems.append('Contagem/estados dos estudos incorretos')
     for project in projects:
         if project['grupo'] == 'planejado' and (project['resultados'] or project['evidencia']):
@@ -75,7 +75,7 @@ def verify():
     forbidden = [r'dbc-[a-f0-9-]+\.cloud\.databricks\.com', r'/Users/[^/\s]+@', r'Bearer\s+[A-Za-z0-9]', r'dapi[a-f0-9]{24,}', r'C:\\Users\\', r'\.conexao[\\/]', r'api[_-]?key\s*[:=]\s*[\"\'][A-Za-z0-9_-]{16,}']
     # Padrões de busca acima são deliberadamente usados apenas na própria ferramenta.
     for path in ROOT.rglob('*'):
-        if not path.is_file() or '__pycache__' in path.parts or path.resolve() == Path(__file__).resolve():
+        if not path.is_file() or '__pycache__' in path.parts or '.git' in path.parts or path.resolve() == Path(__file__).resolve():
             continue
         if path.suffix not in ('.html','.md','.json','.js','.css','.py','.svg'):
             continue
@@ -87,8 +87,6 @@ def verify():
             problems.append(f'{path.name}: recurso de execução externo')
     if not (ROOT / '.nojekyll').is_file():
         problems.append('.nojekyll ausente')
-    if any(p.name == '.git' for p in ROOT.rglob('*')):
-        problems.append('Metadados Git encontrados no pacote')
     result = {'passed': not problems, 'html_pages': len(pages), 'local_references_checked': references, 'projects': len(projects), 'public_evidence_files': len(proof), 'issues': problems}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if problems:

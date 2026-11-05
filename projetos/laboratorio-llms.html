@@ -35,6 +35,36 @@ SAÍDA JSON: {status, answer, references:[{document_id, version}]}.
 CRITÉRIOS: schema válido, fontes existentes e afirmações suportadas.
 ESCOPO: a aplicação valida biblioteca e vigência fora do prompt.</code></pre></div><div class="material-links"><a href="https://github.com/BeatrizOrlandi/aurora-04-laboratorio-llms" rel="noopener noreferrer">Repositório do projeto no GitHub ↗</a><a href="../documentacao/fontes/laboratorio-llms.md" download>Planejamento em Markdown ↓</a><a href="../documentacao/prompts.html">Ver exemplos de prompts estruturados →</a></div></section>
 <a class="next-project" href="agentes-investigacao.html"><span class="mono">PRÓXIMO ESTUDO / 05</span><strong>Agentes de investigação</strong><span aria-hidden="true">↗</span></a></article></main>
-  <footer class="site-footer wrap"><div><a class="footer-name" href="../index.html">Beatriz Helena<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links"><a href="https://github.com/BeatrizOrlandi" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="../curriculo.html">Ver currículo ↗</a><a href="../index.html#projetos">Explorar projetos ↑</a></div><p class="fineprint">© 2026 Beatriz Helena. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" href="../index.html">Beatriz Helena<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links"><a href="https://github.com/BeatrizOrlandi" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="mailto:beatrizhelena777@gmail.com" rel="noopener noreferrer">E-mail <span aria-hidden="true">↗</span></a><a href="../curriculo.html">Ver currículo ↗</a><a href="../index.html#projetos">Explorar projetos ↑</a></div><p class="fineprint">© 2026 Beatriz Helena. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
+  <button type="button" class="chat-fab" data-chat-toggle hidden aria-expanded="false" aria-controls="chat-assistant">
+    <span class="chat-fab-dot" aria-hidden="true"></span>
+    <span>Falar com Agente de IA</span>
+  </button>
+  <aside id="chat-assistant" class="chat-drawer" data-chat-drawer hidden aria-label="Assistente de IA da Beatriz Helena">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <strong>Assistente de IA · Beatriz Helena</strong>
+        <small>Databricks Model Serving · beatriz-portfolio-agent</small>
+      </div>
+      <button type="button" class="chat-close" data-chat-close aria-label="Fechar chat">Fechar ✕</button>
+    </div>
+    <div class="chat-messages" data-chat-messages aria-live="polite">
+      <div class="chat-bubble assistant">
+        <p>Olá! Sou o <strong>Agente de IA da Beatriz Helena</strong> (registrado no Unity Catalog e hospedado via Databricks Model Serving).</p>
+        <p>Posso responder sobre a experiência dela, stack técnica, projetos validados no Databricks ou como entrar em contato (<strong>beatrizhelena777@gmail.com</strong>).</p>
+      </div>
+    </div>
+    <div class="chat-chips" aria-label="Perguntas sugeridas">
+      <button type="button" class="chat-chip" data-chat-prompt="Como entrar em contato com a Beatriz?">Contato e e-mail</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Qual a experiência e formação da Beatriz?">Experiência e UFOP</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Quais projetos foram validados no Databricks?">Projetos Databricks</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Como funciona o projeto de RAG e Vector Search?">Detalhes do RAG</button>
+    </div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chat-input-field">Sua pergunta para o agente da Beatriz</label>
+      <input id="chat-input-field" data-chat-input type="text" placeholder="Pergunte sobre projetos, stack ou contato..." autocomplete="off">
+      <button type="submit">Enviar</button>
+    </form>
+  </aside>
 </body>
 </html>

@@ -84,6 +84,36 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   </header>
   <main id="conteudo">{body}</main>
   <footer class="site-footer wrap"><div><a class="footer-name" href="{home}">{e(PROFILE['nome'])}<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links">{public_links()}<a href="{prefix}curriculo.html">Ver currículo ↗</a><a href="{home}#projetos">Explorar projetos ↑</a></div><p class="fineprint">© {date.fromisoformat(PROFILE['atualizacao_site']).year} {e(PROFILE['nome'])}. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
+  <button type="button" class="chat-fab" data-chat-toggle hidden aria-expanded="false" aria-controls="chat-assistant">
+    <span class="chat-fab-dot" aria-hidden="true"></span>
+    <span>Falar com Agente de IA</span>
+  </button>
+  <aside id="chat-assistant" class="chat-drawer" data-chat-drawer hidden aria-label="Assistente de IA da Beatriz Helena">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <strong>Assistente de IA · Beatriz Helena</strong>
+        <small>Databricks Model Serving · beatriz-portfolio-agent</small>
+      </div>
+      <button type="button" class="chat-close" data-chat-close aria-label="Fechar chat">Fechar ✕</button>
+    </div>
+    <div class="chat-messages" data-chat-messages aria-live="polite">
+      <div class="chat-bubble assistant">
+        <p>Olá! Sou o <strong>Agente de IA da Beatriz Helena</strong> (registrado no Unity Catalog e hospedado via Databricks Model Serving).</p>
+        <p>Posso responder sobre a experiência dela, stack técnica, projetos validados no Databricks ou como entrar em contato (<strong>beatrizhelena777@gmail.com</strong>).</p>
+      </div>
+    </div>
+    <div class="chat-chips" aria-label="Perguntas sugeridas">
+      <button type="button" class="chat-chip" data-chat-prompt="Como entrar em contato com a Beatriz?">Contato e e-mail</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Qual a experiência e formação da Beatriz?">Experiência e UFOP</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Quais projetos foram validados no Databricks?">Projetos Databricks</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Como funciona o projeto de RAG e Vector Search?">Detalhes do RAG</button>
+    </div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chat-input-field">Sua pergunta para o agente da Beatriz</label>
+      <input id="chat-input-field" data-chat-input type="text" placeholder="Pergunte sobre projetos, stack ou contato..." autocomplete="off">
+      <button type="submit">Enviar</button>
+    </form>
+  </aside>
 </body>
 </html>
 '''
@@ -109,7 +139,7 @@ def build_home():
     skills = ''.join(f'''<article class="skill"><span class="mono">0{i + 1}</span><h3>{e(x['titulo'])}</h3><p>{e(x['descricao'])}</p>{tags(x['tecnologias'])}</article>''' for i, x in enumerate(PROFILE['habilidades']))
     body = f'''
 <section class="hero wrap" aria-labelledby="hero-title">
-  <div class="hero-copy"><p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> PYTHON / DADOS / IA</p><h1 id="hero-title">Beatriz<br>Helena</h1><p class="hero-role">Engenheira de IA</p><p class="hero-intro">Trabalho com Python, Databricks, LLMs, RAG e agentes. Aqui estão meus projetos de estudo, com código, arquitetura, testes e o que ainda falta implementar.</p><div class="actions"><a class="button primary" href="#projetos">Ver projetos <span aria-hidden="true">↘</span></a><a class="text-link" href="curriculo.html">Ver currículo →</a></div></div>
+  <div class="hero-copy"><p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> PYTHON / DADOS / IA</p><h1 id="hero-title">Beatriz<br>Helena</h1><p class="hero-role">Engenheira de IA</p><p class="hero-intro">Trabalho com Python, Databricks, LLMs, RAG e agentes. Aqui estão meus projetos de estudo, com código, arquitetura, testes e o que ainda falta implementar.</p><div class="actions"><a class="button primary" href="#projetos">Ver projetos <span aria-hidden="true">↘</span></a><button type="button" class="button secondary" data-open-chat>Conversar com meu Agente de IA 💬</button><a class="text-link" href="curriculo.html">Ver currículo →</a></div></div>
   <div class="system-panel"><div class="panel-label mono"><span class="notebook-name">● ● ● &nbsp; aurora.ipynb</span><span>LAB / 01</span></div><p class="panel-heading">Pipeline<br>de bibliotecas</p><p class="panel-caption mono">DADOS SINTÉTICOS / SETEMBRO 2026</p><ol class="system-flow"><li><span>01</span><div><strong>5.000 eventos</strong><small>Empréstimos, devoluções e renovações</small></div><b aria-hidden="true">↓</b></li><li><span>02</span><div><strong>Bronze → Silver → Gold</strong><small>Validação, deduplicação e agregações</small></div><b aria-hidden="true">↓</b></li><li><span>03</span><div><strong>8 checks + 3 boletins</strong><small>Publicação condicionada à qualidade</small></div></li></ol><a href="projetos/pipeline-dados-aurora.html">Abrir projeto do pipeline <span aria-hidden="true">↗</span></a></div>
 </section>
 <div class="expertise-strip"><div class="wrap"><span>Python</span><span>Databricks</span><span>LLMs & RAG</span><span>LangChain / LangGraph</span><span>MLflow</span><span>APIs</span></div></div>

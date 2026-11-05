@@ -140,7 +140,7 @@ function biaSmartFallback(question) {
       "Mas se você curte ver engenharia pesada na prática, meu *top 3* estilo trilogia *Senhor dos Anéis* é:\n\n" +
       "1. **05 — Agentes & Model Serving:** Máquina de estados com ferramentas tipadas, proteção contra SQL Injection (16/16 cenários aprovados) e eu mesma rodando no Unity Catalog!\n" +
       "2. **03 — RAG de Regulamentos com Vector Search:** Combina busca lexical TF-IDF com **Databricks Vector Search** e embeddings `Qwen3` (93,3% de acerto top-1 e filtro temporal que barra documentos vencidos!).\n" +
-      "3. **01 & 02 — Lakehouse Aurora + Gate de Qualidade:** Um pipeline Medalhão de 7 tarefas com um Gate estilo *Gandalf* (*"You shall not pass!"* 🧙‍♂️) que passou em 24/24 asserções de integração!\n\n" +
+      "3. **01 & 02 — Lakehouse Aurora + Gate de Qualidade:** Um pipeline Medalhão de 7 tarefas com um Gate estilo *Gandalf* (*'You shall not pass!'* 🧙‍♂️) que passou em 24/24 asserções de integração!\n\n" +
       "Quer que eu abra o capô de algum desses para te mostrar os detalhes?"
     );
   }
@@ -157,7 +157,7 @@ function biaSmartFallback(question) {
 
   if (q.includes("quem e voce") || q.includes("seu nome") || q.includes("bia") || q.includes("oi") || q.includes("ola") || q.includes("tudo bem") || q.includes("42") || q.includes("geek") || q.includes("piada")) {
     return (
-      "Oi! Eu sou a **BIA** (*Beatriz Intelligence Assistant*)! 🤖🖖 Pense em mim como a versão *J.A.R.V.I.S.* do portfólio da Beatriz — e sim, eu já sei que a resposta para a vida, o universo e tudo mais é **42**, mas quando a pergunta é *"Quem manja muito de Engenharia de IA e Databricks?"*, a resposta é **Beatriz Helena**! 😄\n\n" +
+      "Oi! Eu sou a **BIA** (*Beatriz Intelligence Assistant*)! 🤖🖖 Pense em mim como a versão *J.A.R.V.I.S.* do portfólio da Beatriz — e sim, eu já sei que a resposta para a vida, o universo e tudo mais é **42**, mas quando a pergunta é *'Quem manja muito de Engenharia de IA e Databricks?'*, a resposta é **Beatriz Helena**! 😄\n\n" +
       "Posso te contar qual é o projeto mais irado dela, explicar como ela evitou vazamento temporal no pipeline de ML, mostrar os benchmarks de LLMs ou já te passar o WhatsApp dela (`+55 31 98843-4917`). O que você manda?"
     );
   }

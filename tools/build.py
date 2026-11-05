@@ -73,8 +73,8 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   {canonical}
   <title>{e(title)}</title>
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia2">
-  <script src="{prefix}assets/site.js?v=bia2" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia3">
+  <script src="{prefix}assets/site.js?v=bia3" defer></script>
 </head>
 <body data-page="{e(page)}">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -84,7 +84,7 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   </header>
   <main id="conteudo">{body}</main>
   <footer class="site-footer wrap"><div><a class="footer-name" href="{home}">{e(PROFILE['nome'])}<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links">{public_links()}<a href="{prefix}curriculo.html">Ver currículo ↗</a><a href="{home}#projetos">Explorar projetos ↑</a></div><p class="fineprint">© {date.fromisoformat(PROFILE['atualizacao_site']).year} {e(PROFILE['nome'])}. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
-  <button type="button" class="chat-fab" data-chat-toggle hidden aria-expanded="false" aria-controls="chat-assistant">
+  <button type="button" class="chat-fab" data-chat-toggle aria-expanded="false" aria-controls="chat-assistant">
     <span class="chat-fab-dot" aria-hidden="true"></span>
     <span>Falar com a BIA (IA) ✨</span>
   </button>

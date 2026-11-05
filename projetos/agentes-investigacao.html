@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163c3a">
+  <meta name="description" content="Design de um fluxo de análise, pesquisa e revisão com ferramentas restritas e decisões rastreáveis.">
+  <meta property="og:title" content="Agentes de investigação — Beatriz Helena">
+  <meta property="og:description" content="Design de um fluxo de análise, pesquisa e revisão com ferramentas restritas e decisões rastreáveis.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="canonical" href="https://beatrizorlandi.github.io/projetos/agentes-investigacao.html">
+  <title>Agentes de investigação — Beatriz Helena</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body data-page="projeto">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header wrap">
+    <a class="brand" href="../index.html" aria-label="Beatriz Helena — início"><span class="monogram" aria-hidden="true">bh.</span><span>Beatriz Helena<small>Engenharia de IA</small></span></a>
+    <nav aria-label="Navegação principal"><a href="../index.html#projetos">Projetos</a><a href="../index.html#sobre">Sobre</a><a href="../index.html#trajetoria">Trajetória</a><a class="nav-cv" href="../curriculo.html">Currículo <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="conteudo"><div class="wrap case-breadcrumb"><a href="../index.html#projetos">← Todos os projetos</a><span class="mono">ESTUDO 05 / 08</span></div><article class="case wrap"><header class="case-hero"><div><p class="eyebrow">Agentes · LangGraph</p><h1>Agentes de investigação</h1><p class="case-summary">Design de um fluxo de análise, pesquisa e revisão com ferramentas restritas e decisões rastreáveis.</p><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>LangGraph (planejado)</li><li>LangChain (opcional)</li><li>Pydantic</li><li>MLflow Tracing</li></ul></div><aside class="case-meta"><span class="status planejado">Planejado</span><dl><dt>PROJETO</dt><dd>Agentes de investigação</dd><dt>CONTEXTO</dt><dd>Estudo autoral · bibliotecas fictícias</dd><dt>EVIDÊNCIAS</dt><dd>Planejamento e critérios de aceite</dd><dt>REPOSITÓRIO</dt><dd><a href="https://github.com/BeatrizOrlandi/aurora-05-agentes-investigacao" rel="noopener noreferrer">Ver no GitHub ↗</a></dd></dl></aside></header>
+<nav class="case-nav" aria-label="Conteúdo deste estudo"><a href="#problema">Problema</a><a href="#arquitetura">Arquitetura</a><a href="#resultados">Resultados e limites</a><a href="#material">Material técnico</a></nav>
+<section id="problema" class="case-section two-column"><div><p class="eyebrow">01 / O PROBLEMA</p><h2>Problema</h2></div><div class="prose"><p>Investigar uma mudança operacional exige cruzar métricas e regulamentos sem liberar consultas ou ações arbitrárias.</p><h3>Escopo entregue</h3><p>Requisitos e design de roteador, analista, pesquisador e revisor. LangGraph é uma opção de orquestração planejada; o sistema multiagente ainda não foi implementado.</p></div></section>
+<section id="arquitetura" class="case-section"><p class="eyebrow">02 / ARQUITETURA</p><h2>Fluxo do projeto</h2><ol class="architecture" aria-label="Etapas da arquitetura"><li><span class="mono">01</span><strong>Pedido + escopo</strong></li><li><span class="mono">02</span><strong>Roteador</strong></li><li><span class="mono">03</span><strong>Analista / pesquisador</strong></li><li><span class="mono">04</span><strong>Ferramentas permitidas</strong></li><li><span class="mono">05</span><strong>Revisor</strong></li><li><span class="mono">06</span><strong>Resposta ou esclarecimento</strong></li></ol><div class="two-column decisions"><h3>Decisões técnicas</h3><ul class="prose-list"><li>Comparar primeiro um fluxo com agente único; adotar vários agentes somente se a avaliação justificar.</li><li>Limitar a quatro chamadas de ferramenta e uma revisão por solicitação.</li><li>Validar argumentos e autorização no runtime; o prompt não concede permissão.</li></ul></div></section>
+<section id="resultados" class="case-section"><p class="eyebrow">03 / RESULTADOS E LIMITES</p><h2>Como será avaliado</h2><p class="plan-callout"><strong>Design e requisitos disponíveis.</strong> Esta trilha ainda não tem resultados de execução. O planejamento detalha os critérios de aceite futuros.</p><p class="prose validation-copy">Critério futuro: avaliar acerto de rota, suporte das afirmações, validade de argumentos, latência, chamadas e violações de escopo com fixtures controladas.</p><div class="two-column"><div><h3>Limites conhecidos</h3><ul class="prose-list"><li>Aguarda baseline LLM; não há traces de um sistema multiagente executado.</li><li>Não haverá envio externo nem execução de SQL livre pelo modelo no MVP planejado.</li></ul></div><div><h3>Próximo incremento</h3><ul class="prose-list"><li>Criar ferramentas tipadas para métricas e recuperação de documentos.</li><li>Testar falha de ferramenta, ambiguidade, tentativa de injeção e orçamento esgotado.</li></ul></div></div></section>
+<section id="material" class="case-section"><p class="eyebrow">04 / MATERIAL TÉCNICO</p><div class="section-heading"><h2>Planejamento e exemplos</h2><a class="button secondary" href="../documentacao/agentes-investigacao.html">Ler planejamento completo ↗</a></div><div class="code-panel"><div><h3>Contrato proposto de execução</h3><span class="mono">text / PROPOSTA NÃO EXECUTADA</span></div><pre><code>Ferramentas: consultar_metricas, buscar_regulamento, salvar_rascunho.
+Contexto confiável: identidade e biblioteca vêm da aplicação.
+Orçamento: até 4 chamadas de ferramenta e 1 revisão.
+Falha: registrar erro, preservar evidências e pedir esclarecimento.
+Conclusão: cada afirmação deve apontar para uma evidência.</code></pre></div><div class="material-links"><a href="https://github.com/BeatrizOrlandi/aurora-05-agentes-investigacao" rel="noopener noreferrer">Repositório do projeto no GitHub ↗</a><a href="../documentacao/fontes/agentes-investigacao.md" download>Planejamento em Markdown ↓</a><a href="../documentacao/prompts.html">Ver exemplos de prompts estruturados →</a></div></section>
+<a class="next-project" href="boletins-verificaveis.html"><span class="mono">PRÓXIMO ESTUDO / 06</span><strong>Automação de boletins</strong><span aria-hidden="true">↗</span></a></article></main>
+  <footer class="site-footer wrap"><div><a class="footer-name" href="../index.html">Beatriz Helena<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links"><a href="https://github.com/BeatrizOrlandi" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="../curriculo.html">Ver currículo ↗</a><a href="../index.html#projetos">Explorar projetos ↑</a></div><p class="fineprint">© 2026 Beatriz Helena. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
+</body>
+</html>

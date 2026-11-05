@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163c3a">
+  <meta name="description" content="Recuperação lexical, vetorial e híbrida de regulamentos fictícios, filtrada por biblioteca e vigência.">
+  <meta property="og:title" content="Pipeline RAG de regulamentos — Beatriz Helena">
+  <meta property="og:description" content="Recuperação lexical, vetorial e híbrida de regulamentos fictícios, filtrada por biblioteca e vigência.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="canonical" href="https://beatrizorlandi.github.io/projetos/rag-regulamentos.html">
+  <title>Pipeline RAG de regulamentos — Beatriz Helena</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body data-page="projeto">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header wrap">
+    <a class="brand" href="../index.html" aria-label="Beatriz Helena — início"><span class="monogram" aria-hidden="true">bh.</span><span>Beatriz Helena<small>Engenharia de IA</small></span></a>
+    <nav aria-label="Navegação principal"><a href="../index.html#projetos">Projetos</a><a href="../index.html#sobre">Sobre</a><a href="../index.html#trajetoria">Trajetória</a><a class="nav-cv" href="../curriculo.html">Currículo <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="conteudo"><div class="wrap case-breadcrumb"><a href="../index.html#projetos">← Todos os projetos</a><span class="mono">ESTUDO 03 / 08</span></div><article class="case wrap"><header class="case-hero"><div><p class="eyebrow">IA generativa · RAG</p><h1>RAG de regulamentos</h1><p class="case-summary">Recuperação lexical, vetorial e híbrida de regulamentos fictícios, filtrada por biblioteca e vigência.</p><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>scikit-learn</li><li>Databricks Vector Search</li><li>Qwen3 embeddings</li><li>Delta CDF</li><li>MLflow</li></ul></div><aside class="case-meta"><span class="status implementado">Recuperação validada</span><dl><dt>PROJETO</dt><dd>Pipeline RAG de regulamentos</dd><dt>CONTEXTO</dt><dd>Estudo autoral · bibliotecas fictícias</dd><dt>EVIDÊNCIAS</dt><dd>Execuções de 28/10/2026</dd><dt>REPOSITÓRIO</dt><dd><a href="https://github.com/BeatrizOrlandi/aurora-03-rag-regulamentos" rel="noopener noreferrer">Ver no GitHub ↗</a></dd></dl></aside></header>
+<nav class="case-nav" aria-label="Conteúdo deste estudo"><a href="#problema">Problema</a><a href="#arquitetura">Arquitetura</a><a href="#resultados">Resultados e limites</a><a href="#material">Material técnico</a></nav>
+<section id="problema" class="case-section two-column"><div><p class="eyebrow">01 / O PROBLEMA</p><h2>Problema</h2></div><div class="prose"><p>A resposta sobre um empréstimo precisa usar a regra correta da biblioteca e a versão vigente na data da pergunta, com fontes rastreáveis.</p><h3>Escopo entregue</h3><p>Corpus original de 13 versões de documentos, baseline TF-IDF e índice Delta Sync com embeddings gerenciados Qwen3 de 1.024 dimensões. Consulta ANN e híbrida, filtros aplicados por código e sincronização manual. A geração de respostas por LLM permanece em standby.</p></div></section>
+<section id="arquitetura" class="case-section"><p class="eyebrow">02 / ARQUITETURA</p><h2>Fluxo do projeto</h2><ol class="architecture" aria-label="Etapas da arquitetura"><li><span class="mono">01</span><strong>Documento + versão</strong></li><li><span class="mono">02</span><strong>Trechos + CDF</strong></li><li><span class="mono">03</span><strong>Embeddings Qwen3</strong></li><li><span class="mono">04</span><strong>Índice Delta Sync</strong></li><li><span class="mono">05</span><strong>Filtro de escopo e data</strong></li><li><span class="mono">06</span><strong>Top-k + referências</strong></li></ol><div class="two-column decisions"><h3>Decisões técnicas</h3><ul class="prose-list"><li>Separar avaliação de recuperação e geração, mantendo um baseline lexical.</li><li>Filtrar biblioteca e vigência no recuperador e conferir novamente os resultados antes de devolvê-los.</li><li>Registrar a falha de paráfrase em vez de alterar o conjunto de avaliação após observar o resultado.</li></ul></div></section>
+<section id="resultados" class="case-section"><p class="eyebrow">03 / RESULTADOS E LIMITES</p><h2>O que foi medido</h2><dl class="metrics"><div><dt>13</dt><dd>trechos indexados</dd></div><div><dt>14/15</dt><dd>perguntas com documento esperado no top-1</dd></div><div><dt>8/8</dt><dd>verificações de integridade aprovadas</dd></div></dl><p class="prose validation-copy">Benchmark vetorial medido em 28/10/2026: acerto top-1 e recall@2 de 14/15 (93,3%) em 15 perguntas. Cinco consultas de integridade e três guardas de entrada passaram. O baseline lexical passou em 16 testes próprios; os conjuntos não constituem uma comparação ampla entre os métodos.</p><div class="two-column"><div><h3>Limites conhecidos</h3><ul class="prose-list"><li>A paráfrase ‘Por quanto tempo posso ficar com um exemplar antes de entregá-lo?’ não recuperou o documento esperado no top-2.</li><li>Similaridade não é probabilidade de correção; limiar de relevância e abstenção ainda não foram calibrados.</li><li>Escopo simulado pela aplicação; autenticação multiusuário e geração LLM ainda não foram demonstradas.</li></ul></div><div><h3>Próximo incremento</h3><ul class="prose-list"><li>Ampliar o benchmark com perguntas inéditas e calibrar a decisão de abstenção.</li><li>Integrar geração estruturada com validação das referências e avaliação separada.</li></ul></div></div><a class="text-link" href="../evidencias/rag.json" download>Baixar evidência resumida (JSON) ↓</a></section>
+<section id="material" class="case-section"><p class="eyebrow">04 / MATERIAL TÉCNICO</p><div class="section-heading"><h2>Planejamento e exemplos</h2><a class="button secondary" href="../documentacao/rag-regulamentos.html">Ler planejamento completo ↗</a></div><div class="code-panel"><div><h3>Filtros usados na recuperação</h3><span class="mono">python / EXCERTO CONCEITUAL</span></div><pre><code>filters = {
+    &quot;library_id&quot;: library_id_validada_pela_aplicacao,
+    &quot;valid_from_day &lt;=&quot;: data_referencia,
+    &quot;valid_to_day &gt;=&quot;: data_referencia,
+}
+# A pergunta não redefine o escopo autorizado.
+# Conferir escopo e vigência também nos trechos retornados.</code></pre></div><div class="material-links"><a href="https://github.com/BeatrizOrlandi/aurora-03-rag-regulamentos" rel="noopener noreferrer">Repositório do projeto no GitHub ↗</a><a href="../documentacao/fontes/rag-regulamentos.md" download>Planejamento em Markdown ↓</a><a href="../documentacao/prompts.html">Ver exemplos de prompts estruturados →</a></div></section>
+<a class="next-project" href="laboratorio-llms.html"><span class="mono">PRÓXIMO ESTUDO / 04</span><strong>Experimentos com LLMs</strong><span aria-hidden="true">↗</span></a></article></main>
+  <footer class="site-footer wrap"><div><a class="footer-name" href="../index.html">Beatriz Helena<span>Engenheira de IA</span></a><p>Portfólio de estudos · Python, Databricks e IA.</p></div><div class="footer-links"><a href="https://github.com/BeatrizOrlandi" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="../curriculo.html">Ver currículo ↗</a><a href="../index.html#projetos">Explorar projetos ↑</a></div><p class="fineprint">© 2026 Beatriz Helena. Estudos autorais com dados sintéticos ou fontes públicas planejadas.<br>Site atualizado em 05/11/2026 · evidências de execução de 28/10/2026.</p></footer>
+</body>
+</html>

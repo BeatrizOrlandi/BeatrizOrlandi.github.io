@@ -1,0 +1,27 @@
+{
+  "measured_on": "2026-10-28",
+  "prepared_on": "2026-11-05",
+  "source": "Resumo estático de artefatos de execuções do laboratório pessoal. IDs, URLs e identidades removidos da cópia pública.",
+  "live_telemetry": false,
+  "status": "SUCCESS",
+  "synthetic_data": true,
+  "tasks": 7,
+  "data_reference": "2026-09-30T23:59:59Z",
+  "bronze_rows": 5000,
+  "accepted_rows": 5000,
+  "duplicate_rows": 0,
+  "quarantine_rows": 0,
+  "loan_rows": 2500,
+  "gold_rows": 69,
+  "totals": {
+    "loans": 2500,
+    "open_loans": 500,
+    "closed_loans": 2000,
+    "total_duration_hours": 191880.0
+  },
+  "limitations": [
+    "Batch didático; até 20 mil eventos/dataset.",
+    "Um escritor por dataset.",
+    "Sem painel AI/BI ou streaming."
+  ]
+}

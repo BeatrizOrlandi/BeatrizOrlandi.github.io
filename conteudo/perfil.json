@@ -1,0 +1,91 @@
+{
+  "nome": "Beatriz Helena",
+  "titulo": "Engenheira de IA",
+  "chamada": "Projetos de dados e IA",
+  "sobre": [
+    "Engenheira de IA com experiência em IA Generativa, LLMs, RAG e sistemas multiagentes, atuando no desenvolvimento de soluções de IA de ponta a ponta, da prototipagem à produção.",
+    "Combinando desenvolvimento de software, dados e visão de negócio para criar soluções escaláveis, observáveis e seguras."
+  ],
+  "resumo": "Desenvolvimento de soluções de IA end-to-end utilizando Python, LLMs, LangChain/LangGraph, RAG e sistemas multiagentes. Experiência com Databricks para construção, avaliação e serving de modelos, além de integração com Salesforce, WhatsApp e Slack. Atuação em prompt engineering, MLflow, observabilidade, escalabilidade, segurança e governança, aplicando IA em automações corporativas e produtos.",
+  "habilidades": [
+    {
+      "titulo": "IA generativa e agentes",
+      "descricao": "IA Generativa, LLMs, RAG e sistemas multiagentes com LangChain e LangGraph.",
+      "tecnologias": [
+        "LLMs",
+        "RAG",
+        "LangChain",
+        "LangGraph",
+        "Prompt engineering"
+      ]
+    },
+    {
+      "titulo": "Modelos e plataforma de dados",
+      "descricao": "Desenvolvimento e deploy de modelos com Python, Databricks e MLflow.",
+      "tecnologias": [
+        "Python",
+        "Databricks",
+        "MLflow",
+        "SQL"
+      ]
+    },
+    {
+      "titulo": "Integrações e produtos",
+      "descricao": "Integração de soluções de IA com APIs e sistemas corporativos.",
+      "tecnologias": [
+        "APIs",
+        "Salesforce",
+        "WhatsApp",
+        "Slack"
+      ]
+    },
+    {
+      "titulo": "Qualidade e governança",
+      "descricao": "Avaliação, observabilidade, escalabilidade e governança de IA.",
+      "tecnologias": [
+        "Avaliação",
+        "Observabilidade",
+        "Segurança",
+        "Governança"
+      ]
+    }
+  ],
+  "formacao": {
+    "curso": "Graduação em Ciência da Computação",
+    "instituicao": "Universidade Federal de Ouro Preto"
+  },
+  "experiencias": [
+    {
+      "empresa": "Efí Bank",
+      "periodo": "2024 — atual",
+      "cargo": "Engenheira de Inovação / IA",
+      "descricao": "Desenvolvimento de protótipos, provas de conceito e demonstrações de soluções de dados e IA para clientes, utilizando Python, Snowflake, SQL e bancos relacionais, em ambientes SaaS e PaaS."
+    },
+    {
+      "empresa": "Dadosfera",
+      "periodo": "2023 — 2024",
+      "cargo": "Estágio em Solutions Engineer",
+      "descricao": "Desenvolvimento web com PHP e MySQL, suporte técnico e atendimento a chamados de diferentes setores, incluindo treinamento de usuários."
+    },
+    {
+      "empresa": "Prefeitura de Ouro Preto",
+      "periodo": "2023",
+      "cargo": "Estágio em Desenvolvimento de Sistemas",
+      "descricao": "Desenvolvimento web com AngularJS, JavaScript, Node.js e MySQL, além de participação no alinhamento de requisitos com clientes e organização do desenvolvimento dos projetos."
+    },
+    {
+      "empresa": "DGB Tecnologia",
+      "periodo": "2022 — 2023",
+      "cargo": "Desenvolvedora Júnior",
+      "descricao": ""
+    }
+  ],
+  "links": {
+    "github": "https://github.com/BeatrizOrlandi",
+    "linkedin": "",
+    "email": ""
+  },
+  "site_url": "https://beatrizorlandi.github.io",
+  "atualizacao_site": "2026-11-05",
+  "data_evidencias": "2026-10-28"
+}

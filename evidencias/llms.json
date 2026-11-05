@@ -1,0 +1,45 @@
+{
+  "measured_on": "2026-11-05",
+  "prepared_on": "2026-11-05",
+  "source": "Resumo estático de execuções do experimento MLflow no Databricks Serverless. IDs privados removidos.",
+  "live_telemetry": false,
+  "status": "SUCCESS",
+  "dataset_version": "3b97a303dcb1f35c",
+  "total_cases": 20,
+  "variants_evaluated": 3,
+  "total_generations": 60,
+  "selected_variant": "V3_estruturado_qwen80b",
+  "delta_table": "workspace.estudos_ai.aurora_llm_resultados",
+  "variants": {
+    "V1_direto_llama70b": {
+      "endpoint": "databricks-meta-llama-3-3-70b-instruct",
+      "style": "direct",
+      "schema_valid_rate": 0.0,
+      "task_accuracy": 0.85,
+      "val_strict_accuracy": 0.0,
+      "test_strict_accuracy": 0.0,
+      "latency_p50_ms": 890.9,
+      "latency_p95_ms": 9894.4
+    },
+    "V2_estruturado_llama70b": {
+      "endpoint": "databricks-meta-llama-3-3-70b-instruct",
+      "style": "structured",
+      "schema_valid_rate": 1.0,
+      "task_accuracy": 1.0,
+      "val_strict_accuracy": 1.0,
+      "test_strict_accuracy": 1.0,
+      "latency_p50_ms": 1588.4,
+      "latency_p95_ms": 4117.3
+    },
+    "V3_estruturado_qwen80b": {
+      "endpoint": "databricks-qwen3-next-80b-a3b-instruct",
+      "style": "structured",
+      "schema_valid_rate": 1.0,
+      "task_accuracy": 1.0,
+      "val_strict_accuracy": 1.0,
+      "test_strict_accuracy": 1.0,
+      "latency_p50_ms": 528.5,
+      "latency_p95_ms": 3901.9
+    }
+  }
+}

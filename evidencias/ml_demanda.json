@@ -1,0 +1,37 @@
+{
+  "measured_on": "2026-11-05",
+  "prepared_on": "2026-11-05",
+  "source": "Resumo estático do pipeline de previsão horária executado no Databricks Serverless com MLflow e Unity Catalog.",
+  "live_telemetry": false,
+  "status": "SUCCESS",
+  "dataset_sha": "f87528a6633caaa2",
+  "bronze_rows": 4320,
+  "valid_feature_rows": 4152,
+  "splits": {
+    "train": 2491,
+    "val": 830,
+    "test": 831
+  },
+  "leakage_checks_passed": true,
+  "uc_model": "workspace.estudos_ai.demanda_bikes",
+  "uc_model_version": "1",
+  "val_mae_improvement_vs_seasonal_pct": 6.05,
+  "models": {
+    "baseline_global_mean": {
+      "val_mae": 49.203,
+      "test_mae": 48.807,
+      "test_rmse": 57.621
+    },
+    "baseline_seasonal_hour_weekend": {
+      "val_mae": 14.318,
+      "test_mae": 11.607,
+      "test_rmse": 14.923
+    },
+    "hist_gradient_boosting_causal": {
+      "val_mae": 13.452,
+      "test_mae": 10.579,
+      "test_rmse": 13.426,
+      "test_rmsle": 0.5538
+    }
+  }
+}

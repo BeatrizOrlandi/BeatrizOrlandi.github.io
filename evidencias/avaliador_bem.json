@@ -1,0 +1,32 @@
+{
+  "measured_on": "2026-11-05",
+  "prepared_on": "2026-11-05",
+  "source": "Resumo estático do benchmark de equivalência semântica executado no Databricks com embeddings Qwen3 e guardrails estruturais.",
+  "live_telemetry": false,
+  "status": "SUCCESS",
+  "embedding_endpoint": "databricks-qwen3-embedding-0-6b",
+  "total_triples": 30,
+  "calibration_triples": 15,
+  "test_triples": 15,
+  "calibrated_threshold": 0.78,
+  "delta_table": "workspace.estudos_ai.aurora_avaliador_equivalencia",
+  "methods_test": {
+    "exact_match": {
+      "f1": 0.25,
+      "critical_false_equivalents": 0
+    },
+    "token_f1": {
+      "f1": 0.1429,
+      "critical_false_equivalents": 0
+    },
+    "uncalibrated_embedding_cosine": {
+      "critical_false_equivalents": 7
+    },
+    "calibrated_bem_adapter": {
+      "f1": 0.9231,
+      "precision": 1.0,
+      "paraphrase_recall": 0.8333,
+      "critical_false_equivalents": 0
+    }
+  }
+}

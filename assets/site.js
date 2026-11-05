@@ -101,10 +101,19 @@ function knowledgeBaseReply(question) {
 
   if (q.includes("agente") || q.includes("serving") || q.includes("llm") || q.includes("langgraph") || q.includes("mlflow") || q.includes("04") || q.includes("05")) {
     return (
-      "Na frente de **Agentes e LLMs (Estudos 04 e 05)**:\n\n" +
-      "• Este próprio assistente foi empacotado como um **`MLflow ResponsesAgent`**, registrado no Unity Catalog (`workspace.estudos_ai.beatriz_portfolio_agent`) e implantado no **Databricks Model Serving** (`beatriz-portfolio-agent`) consumindo o `databricks-meta-llama-3-3-70b-instruct`!\n" +
-      "• Além disso, os estudos cobrem orquestração com ferramentas tipadas (`consultar_metricas`, `buscar_regulamento`, `salvar_rascunho`), avaliação determinística + LLM Judge e rastreabilidade com MLflow Tracing.\n" +
-      "• **Repositório:** https://github.com/BeatrizOrlandi/aurora-05-agentes-investigacao"
+      "Na frente de **Agentes e LLMs (Estudos 04 e 05 — ambos validados no Databricks)**:\n\n" +
+      "• **Estudo 04 (Bancada de LLMs):** 60 gerações avaliadas comparando prompt direto vs. estruturado nos endpoints `databricks-meta-llama-3-3-70b-instruct` e `databricks-qwen3-next-80b-a3b-instruct` (100% de acerto e conformidade JSON no prompt estruturado; p50 de 528,5 ms no Qwen3 80B).\n" +
+      "• **Estudo 05 (Agentes & Model Serving):** Este assistente foi registrado no Unity Catalog (`workspace.estudos_ai.beatriz_portfolio_agent`) e implantado no **Databricks Model Serving** (`beatriz-portfolio-agent`), além da máquina de estados de investigação que passou em **16/16 cenários** de roteamento, guarda de escopo e bloqueio de SQL injection.\n" +
+      "• **Repositórios:** https://github.com/BeatrizOrlandi/aurora-04-laboratorio-llms e https://github.com/BeatrizOrlandi/aurora-05-agentes-investigacao"
+    );
+  }
+
+  if (q.includes("demanda") || q.includes("bike") || q.includes("bicicleta") || q.includes("kaggle") || q.includes("bem") || q.includes("07") || q.includes("08") || q.includes("machine learning")) {
+    return (
+      "Nos **Estudos 07 e 08 (Machine Learning & Avaliação Semântica — ambos validados no Databricks)**:\n\n" +
+      "• **Estudo 07 (Pipeline ML de Demanda Horária):** 4.320 horas ingeridas (Bronze/Silver/Gold), 14 features causais respeitando `availability_time` (atraso de 1h), modelo `HistGradientBoostingRegressor` registrado no Unity Catalog (`workspace.estudos_ai.demanda_bikes` v1) com **MAE de 10,58 no teste** (contra 48,81 da média global e 11,61 do baseline sazonal).\n" +
+      "• **Estudo 08 (Avaliador Semântico BEM):** Benchmark de 30 triplas em inglês combinando embeddings `databricks-qwen3-embedding-0-6b` com guardrails estruturais de números, negação e entidades: **F1 de 92,3%**, **100% de precisão** e **0 falsos equivalentes críticos** (limiar calibrado = 0,78).\n" +
+      "• **Repositórios:** https://github.com/BeatrizOrlandi/aurora-07-pipeline-ml-demanda e https://github.com/BeatrizOrlandi/aurora-08-avaliador-bem-kaggle"
     );
   }
 

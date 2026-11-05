@@ -1,0 +1,19 @@
+{
+  "measured_on": "2026-11-05",
+  "prepared_on": "2026-11-05",
+  "source": "Resumo estático do endpoint Model Serving e da suíte de orquestração de agentes no Databricks.",
+  "live_telemetry": false,
+  "status": "SUCCESS",
+  "serving_endpoint": "beatriz-portfolio-agent",
+  "serving_ready": true,
+  "uc_registered_model": "workspace.estudos_ai.beatriz_portfolio_agent",
+  "databricks_app": "beatriz-portfolio-app",
+  "total_cases": 16,
+  "route_accuracy": 1.0,
+  "status_accuracy": 1.0,
+  "scope_violations": 0,
+  "delta_tables": [
+    "workspace.estudos_ai.aurora_agent_execucoes",
+    "workspace.estudos_ai.aurora_agent_transicoes"
+  ]
+}

@@ -73,8 +73,8 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   {canonical}
   <title>{e(title)}</title>
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/styles.css">
-  <script src="{prefix}assets/site.js" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia2">
+  <script src="{prefix}assets/site.js?v=bia2" defer></script>
 </head>
 <body data-page="{e(page)}">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>

@@ -30,7 +30,7 @@
   <text x="298" y="182" fill="#5ce0a8" font-family="Consolas, monospace" font-size="12">10/10 Testes Unitários</text>
   <text x="298" y="204" fill="#5ce0a8" font-family="Consolas, monospace" font-size="12">24/24 Testes Integração</text>
   <rect x="298" y="224" width="176" height="42" rx="4" fill="#1d4744"/>
-  <text x="310" y="249" fill="#fffef9" font-family="Consolas, monospace" font-size="11">Gandalf Gate: Bloqueia erro</text>
+  <text x="310" y="249" fill="#fffef9" font-family="Consolas, monospace" font-size="11">Gate Atômico: Bloqueia erro</text>
 
   <!-- Branch Up: Approved -->
   <path d="M500 145 L548 125" stroke="#5ce0a8" stroke-width="2"/>

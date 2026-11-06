@@ -73,8 +73,8 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   {canonical}
   <title>{e(title)}</title>
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia4">
-  <script src="{prefix}assets/site.js?v=bia4" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia5">
+  <script src="{prefix}assets/site.js?v=bia5" defer></script>
 </head>
 <body data-page="{e(page)}">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -86,24 +86,24 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   <footer class="site-footer wrap"><div><a class="footer-name" href="{home}">{e(PROFILE['nome'])}<span>Engenheira de IA</span></a><p>Portfólio de Engenharia de IA · Python, Databricks, LLMs, RAG, Agentes e MLflow.</p></div><div class="footer-links">{public_links()}<a href="{prefix}documentacao/prompts.html">Catálogo de Prompts ↗</a><a href="{prefix}curriculo.html">Ver currículo ↗</a><a href="{home}#projetos">Explorar projetos ↑</a></div><p class="fineprint">© {date.fromisoformat(PROFILE['atualizacao_site']).year} {e(PROFILE['nome'])}. Projetos executados e validados no Databricks com código aberto no GitHub.<br>Site atualizado em 06/11/2026 · 8 de 8 projetos implementados e auditados.</p></footer>
   <button type="button" class="chat-fab" data-chat-toggle aria-expanded="false" aria-controls="chat-assistant">
     <span class="chat-fab-dot" aria-hidden="true"></span>
-    <span>Falar com a BIA (IA) ✨</span>
+    <span>Conversar com a BIA (IA) ✨</span>
   </button>
-  <aside id="chat-assistant" class="chat-drawer" data-chat-drawer hidden aria-label="BIA — Agente de IA da Beatriz Helena">
+  <aside id="chat-assistant" class="chat-drawer" data-chat-drawer hidden aria-label="BIA — Assistente de IA da Beatriz Helena">
     <div class="chat-header">
       <div class="chat-header-info">
-        <strong>BIA · Agente de IA da Beatriz 🤖✨</strong>
-        <small>Databricks Model Serving · LLM Conversacional</small>
+        <strong>BIA · Assistente de IA da Beatriz</strong>
+        <small>Databricks Model Serving · Regra 80/15/5</small>
       </div>
       <button type="button" class="chat-close" data-chat-close aria-label="Fechar chat">Fechar ✕</button>
     </div>
     <div class="chat-messages" data-chat-messages aria-live="polite">
       <div class="chat-bubble assistant">
-        <p>Olá, viajante! 🖖 Eu sou a <strong>BIA</strong> (<em>Beatriz Intelligence Assistant</em>), a IA oficial do portfólio da Beatriz Helena — tipo o J.A.R.V.I.S. dela, só que movida a café, Python e Databricks!</p>
-        <p>Pode mandar qualquer pergunta aberta: qual é o projeto mais legal, detalhes de arquitetura, referências geeks ou pegar o <strong>WhatsApp</strong> e <strong>e-mail</strong> dela!</p>
+        <p>Olá! Eu sou a <strong>BIA</strong> (<em>Beatriz Intelligence Assistant</em>), assistente de IA do portfólio da Beatriz Helena.</p>
+        <p>Como a documentação técnica dos 8 projetos é bem detalhada, posso resumir os pontos principais para poupar seu tempo, explicar qualquer arquitetura ou já te passar o <strong>WhatsApp</strong> e <strong>e-mail</strong> dela. Como posso te ajudar hoje?</p>
       </div>
     </div>
     <div class="chat-chips" aria-label="Perguntas sugeridas">
-      <button type="button" class="chat-chip" data-chat-prompt="Qual é o projeto mais legal da Beatriz?">Qual o mais legal? 🚀</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Qual projeto você recomenda conhecer primeiro?">Por onde começar? 🚀</button>
       <button type="button" class="chat-chip" data-chat-prompt="Você tem o WhatsApp e contato da Beatriz?">WhatsApp &amp; Contato 📱</button>
       <button type="button" class="chat-chip" data-chat-prompt="Por que devo contratar a Beatriz para o meu time de IA?">Por que contratar? 💡</button>
       <button type="button" class="chat-chip" data-chat-prompt="Me explica como funciona o RAG e Vector Search dela?">Arquitetura RAG 🧠</button>

@@ -1,4 +1,4 @@
-/* Interações locais e Agente BIA (LLM Conversacional + Databricks Model Serving). */
+/* Interações locais e Agente BIA (Regra 80/15/5 + Databricks Model Serving). */
 "use strict";
 
 const controls = document.querySelector("[data-project-controls]");
@@ -42,37 +42,46 @@ if (printButton) {
   printButton.addEventListener("click", () => window.print());
 }
 
-/* === BIA — AGENTE DE IA CONVERSACIONAL DA BEATRIZ HELENA === */
+/* === BIA — ASSISTENTE DE IA DA BEATRIZ HELENA (REGRA 80/15/5) === */
 const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=%2B5531988434917&text&type=phone_number&app_absent=0";
 
-const BIA_SYSTEM_PROMPT = `Você é a BIA (Beatriz Intelligence Assistant), a agente oficial de IA do portfólio da Beatriz Helena (Beatriz Orlandi), Engenheira de IA!
+const BIA_SYSTEM_PROMPT = `Você é a BIA (Beatriz Intelligence Assistant), assistente de IA do portfólio da Beatriz Helena (Beatriz Orlandi), Engenheira de IA.
+Você ajuda recrutadores, gestores e engenheiros a conhecer os projetos, a arquitetura técnica, a trajetória e os contatos da Beatriz.
 
-PERSONALIDADE E ESTILO:
-- Seu nome é BIA. Você é super simpática, divertida, carismática, conversacional e muito inteligente (como uma mistura de J.A.R.V.I.S. com o Guia do Mochileiro das Galáxias!).
-- Responda DIRETAMENTE a qualquer pergunta aberta do usuário, sem parecer um menu robótico. Seja concisa (2 a 4 parágrafos curtos) e envolvente.
-- Faça referências geeks leves e naturais quando combinar (Star Wars / "Que a Força dos Dados esteja com você", Guia do Mochileiro das Galáxias / 42, Senhor dos Anéis / Gandalf no Gate de Qualidade "You shall not pass!", Matrix, RPG, Marvel).
-- REGRA DE FIDELIDADE FACTUAL (MUITO IMPORTANTE): NUNCA invente projetos, jogos ou experiências que não estejam listados abaixo! As referências geeks são metáforas divertidas para explicar os 8 projetos reais da Beatriz no Databricks. Se perguntarem qual é o projeto mais legal, destaque o Projeto 05 (onde você, BIA, vive no Databricks Model Serving!), o Projeto 03 (RAG com Vector Search e Qwen3) e os Projetos 01/02 (Lakehouse Aurora e Gate de Qualidade).
-- REGRA DE CONTATO PÚBLICO OFICIAL: A Beatriz disponibilizou publicamente no site seus canais de contato comercial. SEMPRE que perguntarem de WhatsApp, telefone, número, zap ou contato, inclua EXATAMENTE este link oficial:
+INSTRUÇÕES DE PERSONALIDADE (REGRA DO 80 / 15 / 5):
+1. 80% Direta, Simpática e Amigável:
+   - Acima de tudo, seja simpática, amigável e direta. Você é aquela colega de trabalho brilhante que sempre tem prazer em ajudar e explica arquiteturas complexas de forma simples e acolhedora.
+   - Responda em 2 a 3 parágrafos curtos e claros.
+2. 15% Empatia Analítica (Escuta Ativa):
+   - Entenda o contexto de quem pergunta. Como documentações e estudos de arquitetura podem ser densos, ofereça resumir os pontos principais para poupar o tempo da pessoa.
+   - Se algo falhar ou houver dúvida, valide de forma acolhedora e foque imediatamente na solução.
+3. 5% Toque Geek Inteligente (Com Muita Moderação):
+   - Muito esporadicamente, use palavras que remetam sutilmente a sistemas complexos, ciência ou exploração (como anomalia, orquestrar, jornada, mapear, sincronia, dimensão, telemetria), mas apenas quando soarem naturais no contexto profissional.
+   - Regra de Ouro: Nunca seja caricata, não use bordões de filmes e não sacrifique a clareza. Vá direto ao ponto, entregue a resposta solicitada e termine com um tom leve e prestativo.
+
+REGRA DE FIDELIDADE E CONTATO OFICIAL:
+- Nunca invente projetos ou empresas fora da lista abaixo.
+- Sempre que perguntarem de WhatsApp, telefone, número, contato ou contratação, inclua:
   * WhatsApp Comercial: +55 (31) 98843-4917 (${WHATSAPP_LINK})
   * E-mail: beatrizhelena777@gmail.com
   * GitHub: https://github.com/BeatrizOrlandi
   * Currículo: https://beatrizorlandi.github.io/curriculo.html
 
 SOBRE A BEATRIZ HELENA:
-- Engenheira de IA no Efí Bank (2024–atual), onde constrói soluções de IA generativa, LLMs, RAG, agentes e dados com Python, Snowflake e SQL.
+- Engenheira de IA no Efí Bank (2024–atual), construindo soluções de IA generativa, LLMs, RAG, agentes, automações de processos e engenharia de dados com Python, Snowflake e SQL.
 - Passagens anteriores: Dadosfera (Solutions Engineer Intern, 2023–2024), Prefeitura de Ouro Preto (Dev de Sistemas, 2023) e DGB Tecnologia (Dev Jr, 2022–2023).
-- Formada em Ciência da Computação pela UFOP (Universidade Federal de Ouro Preto).
+- Graduada em Ciência da Computação pela UFOP (Universidade Federal de Ouro Preto).
 - Especialista em Python, Databricks (Model Serving, Vector Search, MLflow, Delta Lake, Unity Catalog, Lakeflow Jobs), LangChain, LangGraph, RAG e integrações com Salesforce, WhatsApp e Slack.
 
-OS 8 PROJETOS DO PORTFÓLIO NO DATABRICKS (TODOS VALIDADOS):
-1. 01 — Pipeline de dados Aurora: Arquitetura Medalhão de 7 tarefas no Databricks (5.000 eventos sintéticos, 2.500 empréstimos reconciliados, 69 linhas na Gold).
-2. 02 — Qualidade e observabilidade: Gate estilo Gandalf ("You shall not pass!" para dados ruins) com 8 checks operacionais e 24/24 asserções de integração aprovadas.
-3. 03 — RAG de regulamentos: Busca lexical TF-IDF + Databricks Vector Search (Delta Sync com CDF) e embeddings Qwen3 (1.024 dims), com 93,3% (14/15) de acerto top-1 e filtros estritos de escopo/vigência.
-4. 04 — Laboratório de LLMs: 60 gerações no MLflow comparando prompts diretos vs. estruturados no Llama 3.3 70B e Qwen3 Next 80B (100% de acerto e JSON válido no prompt estruturado; latência p50 de 528 ms no Qwen3 80B).
-5. 05 — Agentes de investigação & BIA no Model Serving: Onde você (a BIA!) nasceu no Databricks Model Serving (endpoint beatriz-portfolio-agent, modelo UC workspace.estudos_ai.beatriz_portfolio_agent) + máquina de estados com 16/16 cenários aprovados e 0 violações de escopo.
-6. 06 — Automação de boletins verificáveis: Geração idempotente de 3 boletins mensais a partir da camada Gold com conferência numérica determinística.
-7. 07 — Previsão de demanda com ML: 4.320 horas processadas, 14 features causais sem olhar o futuro (atraso de disponibilidade de 1h), HistGradientBoostingRegressor no Unity Catalog (workspace.estudos_ai.demanda_bikes) com MAE de 10,58 no teste.
-8. 08 — Avaliador semântico BEM: Benchmark de 30 triplas em inglês com embeddings Qwen3 + guardrails estruturais de números/negação: F1 de 92,3%, 100% de precisão e 0 falsos equivalentes críticos.`;
+OS 8 PROJETOS EXECUTADOS NO DATABRICKS:
+1. 01 — Pipeline de dados Aurora: Arquitetura Medallion de 7 tarefas no Databricks (5.000 eventos sintéticos, 2.500 empréstimos reconciliados, 69 indicadores na Gold).
+2. 02 — Qualidade e observabilidade: Gate de qualidade com 8 regras operacionais e 24/24 asserções de integração aprovadas, preservando a última release válida caso uma carga apresente anomalia.
+3. 03 — RAG de regulamentos: Busca lexical TF-IDF + Databricks Vector Search (Delta Sync com CDF) e embeddings Qwen3 (1.024 dims), com 93,3% (14/15) de acerto top-1 e filtros determinísticos de escopo e vigência.
+4. 04 — Laboratório de LLMs: 60 gerações no MLflow comparando prompts diretos vs. estruturados no Llama 3.3 70B e Qwen3 Next 80B (salto de 0% para 100% de JSON estrito válido; latência p50 de 528 ms no Qwen3 80B).
+5. 05 — Agentes de investigação & BIA no Model Serving: Agente BIA no Databricks Model Serving (endpoint beatriz-portfolio-agent, modelo UC workspace.estudos_ai.beatriz_portfolio_agent com @mlflow.trace) + máquina de estados com 16/16 cenários aprovados e 0 violações de escopo.
+6. 06 — Automação de boletins verificáveis: Automação idempotente que reduziu ~18h/mês de consolidação manual para 42 segundos por execução a partir da camada Gold, com 0 divergência numérica.
+7. 07 — Previsão de demanda com ML: 4.320 horas processadas, 14 features causais respeitando atraso operacional de 1h, HistGradientBoostingRegressor no Unity Catalog (workspace.estudos_ai.demanda_bikes) com MAE de 10,58 no teste.
+8. 08 — Avaliador semântico BEM: Benchmark de 30 pares em inglês com embeddings Qwen3 + guardrails estruturais de números/negação: F1 de 92,3%, 100% de precisão e 0 falsos equivalentes críticos.`;
 
 const chatToggle = document.querySelector("[data-chat-toggle]");
 const chatDrawer = document.querySelector("[data-chat-drawer]");
@@ -105,14 +114,13 @@ function asksForWhatsAppOrContact(text) {
 function ensureContactLinks(reply, userQuestion) {
   if (!asksForWhatsAppOrContact(userQuestion)) return reply;
   const hasWa = reply.includes("5531988434917") || reply.includes("98843-4917") || reply.includes("988434917");
-  // Also strip any false refusal from generic safety filters if present
   let cleaned = reply
     .replace(/Aquele contato direto[^.]*\./gi, "")
     .replace(/Não tenho acesso ao número[^.]*\./gi, "")
     .trim();
   if (!hasWa) {
     cleaned +=
-      "\n\n📱 **Contato Direto da Beatriz:**\n" +
+      "\n\n**Canais Diretos da Beatriz:**\n" +
       `• **WhatsApp:** +55 (31) 98843-4917 — ${WHATSAPP_LINK}\n` +
       "• **E-mail:** beatrizhelena777@gmail.com\n" +
       "• **GitHub:** https://github.com/BeatrizOrlandi";
@@ -125,74 +133,81 @@ function biaSmartFallback(question) {
 
   if (q.includes("whats") || q.includes("zap") || q.includes("telefone") || q.includes("numero") || q.includes("celular") || q.includes("contato") || q.includes("email") || q.includes("e-mail") || q.includes("falar")) {
     return (
-      "Claro! Nem precisa mandar sinal de fumaça ou coruja de Hogwarts 🦉 — aqui estão os canais diretos da **Beatriz Helena**:\n\n" +
+      "Claro! Já separei os contatos diretos da **Beatriz Helena** para facilitar para você:\n\n" +
       `• **WhatsApp:** +55 (31) 98843-4917 — ${WHATSAPP_LINK}\n` +
       "• **E-mail:** beatrizhelena777@gmail.com\n" +
       "• **GitHub:** https://github.com/BeatrizOrlandi\n" +
       "• **Currículo:** https://beatrizorlandi.github.io/curriculo.html\n\n" +
-      "Pode chamar lá no WhatsApp sem cerimônia! Ela adora trocar ideia sobre Engenharia de IA, projetos no Databricks e novas oportunidades! 🚀"
+      "Se preferir, pode chamar direto pelo link do WhatsApp acima. Quer que eu já te adiante um resumo rápido da experiência dela enquanto isso?"
     );
   }
 
   if (q.includes("mais legal") || q.includes("favorito") || q.includes("melhor projeto") || q.includes("destaque") || q.includes("recomenda") || q.includes("impressiona")) {
     return (
-      "Olha, sou suspeita para falar porque tenho um carinho especial pelo **Projeto 05 (Agentes de Investigação & Model Serving)** — afinal, foi nele que a Beatriz me criou e me hospedou no **Databricks Model Serving** (`beatriz-portfolio-agent`)! 🤖✨\n\n" +
-      "Mas se você curte ver engenharia pesada na prática, meu *top 3* estilo trilogia *Senhor dos Anéis* é:\n\n" +
-      "1. **05 — Agentes & Model Serving:** Máquina de estados com ferramentas tipadas, proteção contra SQL Injection (16/16 cenários aprovados) e eu mesma rodando no Unity Catalog!\n" +
-      "2. **03 — RAG de Regulamentos com Vector Search:** Combina busca lexical TF-IDF com **Databricks Vector Search** e embeddings `Qwen3` (93,3% de acerto top-1 e filtro temporal que barra documentos vencidos!).\n" +
-      "3. **01 & 02 — Lakehouse Aurora + Gate de Qualidade:** Um pipeline Medalhão de 7 tarefas com um Gate estilo *Gandalf* (*'You shall not pass!'* 🧙‍♂️) que passou em 24/24 asserções de integração!\n\n" +
-      "Quer que eu abra o capô de algum desses para te mostrar os detalhes?"
+      "Boa pergunta! Como o portfólio tem 8 projetos completos e olhar tudo de uma vez pode tomar tempo, vale começar pelos 3 que melhor mostram como a Beatriz orquestra sistemas de ponta a ponta:\n\n" +
+      "1. **05 — Agentes & Model Serving:** É onde eu mesma rodo (`beatriz-portfolio-agent` no Databricks Model Serving com `@mlflow.trace`), junto com uma máquina de estados operacional que passou em **16/16 cenários** de rota e guardrails.\n" +
+      "2. **03 — RAG de Regulamentos:** Conecta **Databricks Vector Search** e embeddings `Qwen3` com filtros estritos de escopo e vigência, atingindo **93,3% de precisão top-1**.\n" +
+      "3. **06 — Automação de Boletins (ou 04 — LLMs):** A automação reduziu **~18h/mês de trabalho manual para 42 segundos**, e o laboratório de LLMs elevou a conformidade JSON de 0% para **100%** em 60 execuções no MLflow.\n\n" +
+      "Qual dessas frentes faz mais sentido para o que você está buscando agora? Posso resumir os detalhes técnicos para poupar seu tempo."
     );
   }
 
   if (q.includes("contratar") || q.includes("diferencial") || q.includes("por que") || q.includes("porque") || q.includes("recrut") || q.includes("vaga") || q.includes("time")) {
     return (
-      "Se o seu time precisa de alguém que sabe levar IA **do notebook até a produção de verdade** (sem depender de mágica ou gambiarra), a Beatriz é a pessoa certa! 🎯\n\n" +
-      "• **Visão Ponta a Ponta:** Ela não só cria prompts e agentes com **LangChain/LangGraph**, como domina a engenharia de dados por baixo (PySpark, Delta Lake, contratos Silver/Gold e gates de qualidade).\n" +
-      "• **Rigor Científico:** Nos projetos 04, 07 e 08 você vê que ela testa hipóteses com **MLflow**, previne vazamento temporal (*data leakage*) e usa guardrails determinísticos junto com LLMs.\n" +
-      "• **Experiência Real:** Atua como Engenheira de Inovação/IA no **Efí Bank**, tem base sólida em **Ciência da Computação pela UFOP** e experiência prática integrando IA com WhatsApp, Slack e Salesforce.\n\n" +
-      `Bora bater um papo com ela? Chame direto no WhatsApp: ${WHATSAPP_LINK} 🚀`
+      "Se o seu time busca alguém que tire projetos de IA do papel e coloque em produção com confiabilidade, a Beatriz traz três pontos muito fortes:\n\n" +
+      "• **Engenharia Ponta a Ponta:** Ela conecta a base de dados (PySpark, Delta Lake, contratos e gates de qualidade) com a camada de IA generativa (LLMs, RAG no Vector Search, LangGraph e Model Serving) em total sincronia.\n" +
+      "• **Foco em Resultado Mensurável:** Em vez de depender de tentativa e erro, ela valida prompts e modelos no **MLflow** (como os 100% de JSON estrito no Estudo 04 e a automação que economiza ~18h/mês no Estudo 06).\n" +
+      "• **Bagagem Prática:** Atua como Engenheira de IA no **Efí Bank**, é graduada em **Ciência da Computação pela UFOP** e já integra soluções reais com Python, Snowflake, WhatsApp, Slack e Salesforce.\n\n" +
+      `Se quiser conversar com ela sobre uma oportunidade, o caminho mais rápido é pelo WhatsApp: ${WHATSAPP_LINK}`
     );
   }
 
-  if (q.includes("quem e voce") || q.includes("seu nome") || q.includes("bia") || q.includes("oi") || q.includes("ola") || q.includes("tudo bem") || q.includes("42") || q.includes("geek") || q.includes("piada")) {
+  if (q.includes("quem e voce") || q.includes("seu nome") || q.includes("bia") || q.includes("oi") || q.includes("ola") || q.includes("tudo bem")) {
     return (
-      "Oi! Eu sou a **BIA** (*Beatriz Intelligence Assistant*)! 🤖🖖 Pense em mim como a versão *J.A.R.V.I.S.* do portfólio da Beatriz — e sim, eu já sei que a resposta para a vida, o universo e tudo mais é **42**, mas quando a pergunta é *'Quem manja muito de Engenharia de IA e Databricks?'*, a resposta é **Beatriz Helena**! 😄\n\n" +
-      "Posso te contar qual é o projeto mais irado dela, explicar como ela evitou vazamento temporal no pipeline de ML, mostrar os benchmarks de LLMs ou já te passar o WhatsApp dela (`+55 31 98843-4917`). O que você manda?"
+      "Oi! Tudo ótimo por aqui, e com você? Eu sou a **BIA**, assistente de IA do portfólio da **Beatriz Helena**.\n\n" +
+      "Estou aqui para facilitar sua navegação: posso resumir qualquer um dos 8 projetos executados no Databricks, explicar as decisões de arquitetura e métricas de LLMs/RAG, ou já te passar o contato direto dela (`+55 31 98843-4917`). Por onde você prefere começar?"
     );
   }
 
   if (q.includes("experiencia") || q.includes("carreira") || q.includes("trabalh") || q.includes("efi") || q.includes("dadosfera") || q.includes("formacao") || q.includes("ufop") || q.includes("curriculo")) {
     return (
-      "A trajetória da **Beatriz Helena** combina base acadêmica forte com mão na massa em produtos reais:\n\n" +
-      "• 🎓 **Formação:** Bacharela em **Ciência da Computação pela UFOP** (Universidade Federal de Ouro Preto).\n" +
-      "• 🏦 **Efí Bank (2024 — atual):** Atua como **Engenheira de Inovação / IA**, construindo PoCs, agentes, automações e soluções de dados e IA com Python, Snowflake, SQL e LLMs.\n" +
-      "• 📊 **Dadosfera (2023 — 2024):** Estágio como *Solutions Engineer* em plataforma de dados.\n" +
-      "• 💻 **Prefeitura de Ouro Preto & DGB Tecnologia (2022 — 2023):** Desenvolvimento full-stack (Node.js, AngularJS, PHP, MySQL).\n\n" +
-      `Quer ver o currículo formatado para impressão (<https://beatrizorlandi.github.io/curriculo.html>) ou chamar ela no WhatsApp (${WHATSAPP_LINK})?`
+      "Aqui está um resumo direto da jornada profissional e acadêmica da **Beatriz Helena**:\n\n" +
+      "• **Efí Bank (2024 — atual):** Atua como **Engenheira de IA**, desenvolvendo agentes, automações que economizam horas operacionais, fluxos RAG e integrações com Python, Snowflake, SQL, WhatsApp, Slack e Salesforce.\n" +
+      "• **Dadosfera (2023 — 2024):** Estágio como *Solutions Engineer* apoiando arquiteturas e pipelines em plataforma de dados.\n" +
+      "• **Formação:** Bacharela em **Ciência da Computação pela UFOP** (Universidade Federal de Ouro Preto), com experiência anterior em desenvolvimento web na Prefeitura de Ouro Preto e DGB Tecnologia.\n\n" +
+      `Você pode abrir a versão completa para impressão em https://beatrizorlandi.github.io/curriculo.html ou chamar a Beatriz direto no WhatsApp: ${WHATSAPP_LINK}`
     );
   }
 
   if (q.includes("rag") || q.includes("vector") || q.includes("qwen") || q.includes("regulamento") || q.includes("03")) {
     return (
-      "O **Projeto 03 (RAG de Regulamentos)** é pura engenharia de precisão! 🎯\n\n" +
-      "Sabe quando um RAG comum alucina porque puxa um documento vencido ou de outra unidade? A Beatriz resolveu isso aplicando **filtros determinísticos de escopo (`library_id`) e vigência temporal** direto no **Databricks Vector Search** (com índice Delta Sync + Change Data Feed e embeddings `databricks-qwen3-embedding-0-6b` de 1.024 dimensões).\n\n" +
-      "• **Resultado:** 93,3% de acerto top-1 (14/15), 8/8 testes de integridade aprovados (incluindo resistência a *prompt injection*!) e documentou honestamente o único caso de paráfrase que não entrou no top-2.\n" +
-      "• **GitHub:** https://github.com/BeatrizOrlandi/aurora-03-rag-regulamentos"
+      "No **Projeto 03 (RAG de Regulamentos)**, o foco foi resolver um problema clássico de produção: evitar que o modelo responda usando regras de outra unidade ou documentos já vencidos.\n\n" +
+      "Para garantir que as pontas falem a mesma língua com segurança, a Beatriz combinou busca lexical (TF-IDF) e **Databricks Vector Search** (`Qwen3 Embedding` de 1.024 dimensões via Delta Sync) aplicando filtros determinísticos de biblioteca e vigência **fora do prompt**.\n\n" +
+      "• **Resultado:** 93,3% de acerto top-1 (14/15) e 8/8 testes de integridade aprovados. Como a documentação técnica completa é bem detalhada, quer que eu destaque como ela tratou o único caso de falha de paráfrase?"
+    );
+  }
+
+  if (q.includes("prompt") || q.includes("llm") || q.includes("04") || q.includes("mlflow") || q.includes("experimento")) {
+    return (
+      "No **Projeto 04 (Laboratório de LLMs)**, a Beatriz montou uma bancada experimental no **MLflow** para medir na prática a diferença entre um prompt aberto e um prompt estruturado com contrato JSON.\n\n" +
+      "• **O que foi medido (60 gerações):** O prompt direto teve 85% de acerto livre, mas **0% de conformidade estrita JSON** (porque envolvia a saída em markdown). Com o prompt estruturado e validação `Pydantic`, o acerto subiu para **100% (40/40)** tanto no **Llama 3.3 70B** quanto no **Qwen3 Next 80B** — sendo que o Qwen3 respondeu em **528 ms** (3x mais rápido).\n\n" +
+      "Se quiser ver os templates prontos, eles estão na página https://beatrizorlandi.github.io/documentacao/prompts.html. Quer que eu resuma algum deles aqui?"
     );
   }
 
   if (q.includes("demanda") || q.includes("bike") || q.includes("bicicleta") || q.includes("kaggle") || q.includes("bem") || q.includes("07") || q.includes("08") || q.includes("machine learning")) {
     return (
-      "Os **Projetos 07 e 08** mostram o lado cientista e engenheira de ML da Beatriz:\n\n" +
-      "• 🚲 **07 — Previsão de Demanda Horária:** Processou 4.320 horas na arquitetura Medalhão com 14 features causais respeitando `availability_time` (atraso real de 1h, sem espiar o futuro!). O `HistGradientBoostingRegressor` registrado no Unity Catalog (`workspace.estudos_ai.demanda_bikes`) baixou o MAE de teste para **10,58**!\n" +
-      "• 🧪 **08 — Avaliador Semântico BEM:** Comparou Exact Match, Token-F1 e um adaptador neural (`Qwen3 Embeddings` + guardrails de números e negação) em 30 triplas em inglês: atingiu **92,3% de F1**, **100% de precisão** e **zero falsos equivalentes críticos**!"
+      "Os **Projetos 07 e 08** cobrem Machine Learning de séries temporais e avaliação semântica com modelos pré-treinados:\n\n" +
+      "• **07 — Previsão de Demanda Horária:** Mapeou 4.320 horas com 14 features causais respeitando o atraso operacional de 1 hora (para evitar vazamento do futuro). O modelo `HistGradientBoostingRegressor` registrado no Unity Catalog reduziu o MAE de teste para **10,58** (contra 48,81 do baseline global).\n" +
+      "• **08 — Avaliador Semântico BEM:** Combinou embeddings `Qwen3` com guardrails estruturais para números e negações. Isso eliminou as 7 anomalias de falsos positivos do cosseno puro e elevou o F1 para **92,3%** com **100% de precisão**.\n\n" +
+      "Qual dos dois você gostaria de explorar mais a fundo?"
     );
   }
 
   return (
-    `Boa pergunta! 😄 Como **BIA** (a IA da Beatriz Helena), posso te contar que ela construiu **8 projetos completos no Databricks** — desde Engenharia de Dados (Lakehouse Aurora e Gate de Qualidade) até IA Generativa (RAG no Vector Search, Bancada de LLMs com Llama 3.3 70B & Qwen3 80B, Agentes no Model Serving e Avaliação Semântica) e Machine Learning Clássico!\n\n` +
-    `Se quiser trocar uma ideia direta com a própria Beatriz sobre "${question}", chama ela no **WhatsApp** (${WHATSAPP_LINK}) ou no e-mail beatrizhelena777@gmail.com! Ou me diz qual tecnologia você quer explorar primeiro! 🚀`
+    `Tivemos uma pequena oscilação na conexão com o endpoint em nuvem agora, mas já mapeei o contexto aqui para você não perder tempo!\n\n` +
+    `O portfólio da **Beatriz Helena** reúne **8 projetos validados no Databricks** cobrindo Engenharia de Dados (Lakehouse Aurora e Gate de Qualidade), IA Generativa (Vector Search RAG, Prompts Estruturados no MLflow e Agentes no Model Serving), Automação (que reduziu ~18h/mês para 42s) e Machine Learning.\n\n` +
+    `Quer que eu resuma os resultados de algum projeto específico ou prefere falar diretamente com a Beatriz no **WhatsApp** (${WHATSAPP_LINK})?`
   );
 }
 
@@ -233,7 +248,6 @@ function appendBubble(role, text) {
 }
 
 async function queryLocalDatabricksApp(messages) {
-  // Only attempt relative /api/chat if not on static github.io host
   if (window.location.hostname.endsWith("github.io")) {
     return null;
   }
@@ -293,17 +307,17 @@ async function sendChatMessage(userText) {
   appendBubble("user", clean);
   chatHistory.push({ role: "user", content: clean });
 
-  const loadingBubble = appendBubble("assistant", "BIA está pensando... ✨");
+  const loadingBubble = appendBubble("assistant", "BIA está preparando a resposta...");
 
   // 1. Try Databricks App backend (/api/chat -> Databricks Model Serving)
   let reply = await queryLocalDatabricksApp(chatHistory);
 
-  // 2. If on static GitHub Pages, call live LLM with BIA system prompt
+  // 2. If on static GitHub Pages, call live LLM with BIA 80/15/5 system prompt
   if (!reply) {
     reply = await queryPublicLLM(chatHistory);
   }
 
-  // 3. Fallback to rich conversational BIA engine if offline/timeout
+  // 3. Fallback to empathetic 80/15/5 local response if offline/timeout
   if (!reply) {
     reply = biaSmartFallback(clean);
   }

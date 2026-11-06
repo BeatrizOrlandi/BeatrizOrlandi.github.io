@@ -1,70 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Arquitetura Medallion do Pipeline de Dados Aurora">
-  <defs>
-    <linearGradient id="bg01" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#133432"/>
-      <stop offset="100%" stop-color="#1d4946"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="380" rx="8" fill="url(#bg01)"/>
-  <g stroke="#2a5a56" stroke-width="1" opacity="0.45">
-    <line x1="0" y1="70" x2="800" y2="70"/>
-    <line x1="0" y1="310" x2="800" y2="310"/>
-    <line x1="200" y1="70" x2="200" y2="310"/>
-    <line x1="400" y1="70" x2="400" y2="310"/>
-    <line x1="600" y1="70" x2="600" y2="310"/>
-  </g>
-  <text x="32" y="42" fill="#e8c996" font-family="Consolas, monospace" font-size="13" letter-spacing="1.5">01 / LAKEHOUSE MEDALLION ARCHITECTURE · DATABRICKS JOBS</text>
-  <rect x="630" y="22" width="138" height="28" rx="14" fill="#25544f" stroke="#5ce0a8" stroke-width="1"/>
-  <circle cx="648" cy="36" r="4" fill="#5ce0a8"/>
-  <text x="660" y="40" fill="#fffef9" font-family="Consolas, monospace" font-size="11">7 TASKS · SUCCESS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Arquitetura Medallion com Ingestão Incremental, Quarentena e Publicação Atômica">
+  <rect width="800" height="340" rx="8" fill="#143533"/>
+  <text x="32" y="40" fill="#e8c996" font-family="Consolas, monospace" font-size="12" letter-spacing="1.4">ARQUITETURA MEDALLION · RECONCILIAÇÃO CDC, QUARENTENA &amp; PUBLICAÇÃO ATÔMICA</text>
+  <rect x="32" y="74" width="165" height="200" rx="6" fill="#1a403d" stroke="#d49a6a" stroke-width="1.5"/>
+  <text x="48" y="102" fill="#d49a6a" font-family="Consolas, monospace" font-size="11" font-weight="bold">01 / LANDING &amp; BRONZE</text>
+  <text x="48" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Ingestão Imutável</text>
+  <text x="48" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Manifesto SHA-256</text>
+  <text x="48" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Event Time vs Ingest</text>
+  <text x="48" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Schema Enforcement</text>
+  <text x="48" y="226" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Idempotência de Lote</text>
 
-  <!-- Bronze Box -->
-  <rect x="32" y="96" width="160" height="184" rx="6" fill="#1a403d" stroke="#d49a6a" stroke-width="1.5"/>
-  <text x="50" y="124" fill="#d49a6a" font-family="Consolas, monospace" font-size="12" font-weight="bold">BRONZE LAYER</text>
-  <text x="50" y="162" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">5.000</text>
-  <text x="50" y="184" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Eventos brutos</text>
-  <text x="50" y="216" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Empréstimos</text>
-  <text x="50" y="234" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Devoluções</text>
-  <text x="50" y="252" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Manifesto SHA</text>
+  <path d="M201 174 L225 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="225,169 233,174 225,179" fill="#e8c996"/>
 
-  <!-- Arrow 1 -->
-  <path d="M196 188 L222 188" stroke="#e8c996" stroke-width="2"/>
-  <polygon points="222,183 230,188 222,193" fill="#e8c996"/>
+  <rect x="237" y="74" width="175" height="200" rx="6" fill="#1a403d" stroke="#c5d1db" stroke-width="1.5"/>
+  <text x="253" y="102" fill="#c5d1db" font-family="Consolas, monospace" font-size="11" font-weight="bold">02 / SILVER &amp; QUARENTENA</text>
+  <text x="253" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Reconciliação de Estado</text>
+  <text x="253" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Deduplicação por Chave</text>
+  <text x="253" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Resolução Late-Arriving</text>
+  <text x="253" y="204" fill="#f2a68d" font-family="Consolas, monospace" font-size="11">• Desvio p/ Quarentena</text>
+  <text x="253" y="226" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Histórico Auditável</text>
 
-  <!-- Silver Box -->
-  <rect x="234" y="96" width="160" height="184" rx="6" fill="#1a403d" stroke="#c5d1db" stroke-width="1.5"/>
-  <text x="252" y="124" fill="#c5d1db" font-family="Consolas, monospace" font-size="12" font-weight="bold">SILVER + QUARENTENA</text>
-  <text x="252" y="162" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">2.500</text>
-  <text x="252" y="184" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Empréstimos únicos</text>
-  <text x="252" y="216" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Deduplicação CDC</text>
-  <text x="252" y="234" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• 2.000 concluídos</text>
-  <text x="252" y="252" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• 500 em aberto</text>
+  <path d="M416 174 L440 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="440,169 448,174 440,179" fill="#e8c996"/>
 
-  <!-- Arrow 2 -->
-  <path d="M398 188 L424 188" stroke="#e8c996" stroke-width="2"/>
-  <polygon points="424,183 432,188 424,193" fill="#e8c996"/>
+  <rect x="452" y="74" width="155" height="200" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="468" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">03 / CAMADA GOLD</text>
+  <text x="468" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Visões de Negócio</text>
+  <text x="468" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Agregações Temporais</text>
+  <text x="468" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Snapshots por Versão</text>
+  <text x="468" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Contratos Semânticos</text>
 
-  <!-- Gold Box -->
-  <rect x="436" y="96" width="156" height="184" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="2"/>
-  <text x="454" y="124" fill="#e8c996" font-family="Consolas, monospace" font-size="12" font-weight="bold">GOLD LAYER</text>
-  <text x="454" y="162" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">69</text>
-  <text x="454" y="184" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Indicadores agregados</text>
-  <text x="454" y="216" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Mensal por unidade</text>
-  <text x="454" y="234" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Circulação ativa</text>
-  <text x="454" y="252" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• Taxa de atraso</text>
+  <path d="M611 174 L635 174" stroke="#5ce0a8" stroke-width="2"/>
+  <polygon points="635,169 643,174 635,179" fill="#5ce0a8"/>
 
-  <!-- Arrow 3 -->
-  <path d="M596 188 L620 188" stroke="#5ce0a8" stroke-width="2"/>
-  <polygon points="620,183 628,188 620,193" fill="#5ce0a8"/>
+  <rect x="647" y="74" width="121" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="661" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">04 / RELEASE</text>
+  <text x="661" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold">Gate Atômico</text>
+  <text x="661" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Ponteiro Lógico</text>
+  <text x="661" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Rollback Seguro</text>
+  <text x="661" y="204" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">• Zero Leitura Suja</text>
 
-  <!-- Release Pointer Box -->
-  <rect x="632" y="96" width="136" height="184" rx="6" fill="#1f4d47" stroke="#5ce0a8" stroke-width="1.5"/>
-  <text x="648" y="124" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">GATE &amp; RELEASE</text>
-  <text x="648" y="162" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold">8/8</text>
-  <text x="648" y="184" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Checks aprovados</text>
-  <text x="648" y="216" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• Release Atômica</text>
-  <text x="648" y="234" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• 3 Boletins Gold</text>
-  <text x="648" y="252" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• Zero Vazamento</text>
-
-  <text x="32" y="346" fill="#bfd0c5" font-family="Consolas, monospace" font-size="12">PySpark · Delta Lake · Reconciliação Determinística · Publicação Condicionada ao Gate</text>
+  <text x="32" y="312" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">Orquestração orientada a contratos com isolamento de falhas e consumo protegido por versão aprovada.</text>
 </svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="Arquitetura de Engenharia de IA: Canais, Guardrails, Agentes, RAG Híbrido, Cache e Governança">
+  <defs>
+    <linearGradient id="bgCorp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#133331"/>
+      <stop offset="100%" stop-color="#1d4845"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="360" rx="8" fill="url(#bgCorp)"/>
+  <text x="32" y="38" fill="#e8c996" font-family="Consolas, monospace" font-size="12" letter-spacing="1.4">ARQUITETURA DE REFERÊNCIA · SISTEMAS DE IA, AGENTES, RAG &amp; GOVERNANÇA EM PRODUÇÃO</text>
+
+  <!-- 1. Canais & Entrada -->
+  <rect x="32" y="66" width="175" height="236" rx="6" fill="#1a403d" stroke="#9ab3a8" stroke-width="1.5"/>
+  <text x="48" y="94" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">01 / CANAIS &amp; APIS</text>
+  <text x="48" y="122" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Interfaces &amp; Eventos</text>
+  <text x="48" y="152" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• WhatsApp &amp; Slack</text>
+  <text x="48" y="174" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• CRM (Salesforce)</text>
+  <text x="48" y="196" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Webhooks &amp; REST</text>
+  <rect x="48" y="218" width="143" height="66" rx="4" fill="#122d2b" stroke="#5ce0a8" stroke-width="1"/>
+  <text x="58" y="238" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10" font-weight="bold">GUARDRAILS DE ENTRADA</text>
+  <text x="58" y="256" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Escopo &amp; Autenticação</text>
+  <text x="58" y="272" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Anti-Prompt Injection</text>
+
+  <path d="M211 184 L237 184" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="237,179 245,184 237,189" fill="#e8c996"/>
+
+  <!-- 2. Orquestração de Agentes & Cache -->
+  <rect x="249" y="66" width="215" height="236" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="2"/>
+  <text x="267" y="94" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">02 / ORQUESTRAÇÃO &amp; CACHE</text>
+  <text x="267" y="122" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Grafo de Agentes</text>
+  <text x="267" y="150" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Roteamento de Intenção</text>
+  <text x="267" y="170" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Memória de Curto/Longo Prazo</text>
+  <text x="267" y="190" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Tool Calling Fortemente Tipado</text>
+  <rect x="267" y="210" width="179" height="74" rx="4" fill="#1b4340"/>
+  <text x="279" y="230" fill="#e8c996" font-family="Consolas, monospace" font-size="10" font-weight="bold">EFICIÊNCIA &amp; CUSTOS</text>
+  <text x="279" y="248" fill="#fffef9" font-family="Consolas, monospace" font-size="10">• Cache Semântico / Hash</text>
+  <text x="279" y="264" fill="#fffef9" font-family="Consolas, monospace" font-size="10">• Roteamento Small vs Large LLM</text>
+  <text x="279" y="280" fill="#fffef9" font-family="Consolas, monospace" font-size="10">• Orçamento máx. de passos</text>
+
+  <path d="M468 184 L494 184" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="494,179 502,184 494,189" fill="#e8c996"/>
+
+  <!-- 3. RAG Híbrido & Re-ranking -->
+  <rect x="506" y="66" width="210" height="236" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="524" y="94" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">03 / RAG &amp; CONHECIMENTO</text>
+  <text x="524" y="122" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Busca Híbrida + Re-rank</text>
+  <text x="524" y="150" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Indexação Incremental (CDC)</text>
+  <text x="524" y="170" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Busca Vetorial + Lexical</text>
+  <text x="524" y="190" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Filtro de Vigência e Permissão</text>
+  <text x="524" y="210" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Re-ranking de Relevância</text>
+  <rect x="524" y="228" width="174" height="56" rx="4" fill="#122d2b"/>
+  <text x="536" y="248" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10" font-weight="bold">FONTES DE DADOS</text>
+  <text x="536" y="266" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">Lakehouse · SQL · Documentos</text>
+
+  <path d="M720 184 L746 184" stroke="#5ce0a8" stroke-width="2"/>
+  <polygon points="746,179 754,184 746,189" fill="#5ce0a8"/>
+
+  <!-- 4. Saída Estruturada, Eval & Observabilidade -->
+  <rect x="758" y="66" width="170" height="236" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="774" y="94" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">04 / EVAL &amp; GOVERNANÇA</text>
+  <text x="774" y="122" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Confiabilidade</text>
+  <text x="774" y="150" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• JSON Schema / Pydantic</text>
+  <text x="774" y="170" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Checagem de Citações</text>
+  <text x="774" y="190" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Tracing (Latência/Tokens)</text>
+  <text x="774" y="210" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• LLM-as-a-Judge &amp; Evals</text>
+  <text x="774" y="230" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Fallback Determinístico</text>
+
+  <text x="32" y="334" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">Desenho arquitetural focado em segurança, controle de custos, observabilidade de traces e prevenção de alucinações.</text>
+</svg>

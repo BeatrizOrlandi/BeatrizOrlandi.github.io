@@ -1,36 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Agente BIA no Databricks Model Serving e Máquina de Estados de Investigação">
-  <defs>
-    <linearGradient id="bg05" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#12312f"/>
-      <stop offset="100%" stop-color="#1e4b47"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="380" rx="8" fill="url(#bg05)"/>
-  <text x="32" y="42" fill="#e8c996" font-family="Consolas, monospace" font-size="13" letter-spacing="1.5">05 / BIA MODEL SERVING AGENT &amp; STATE MACHINE · MLFLOW TRACING</text>
-  <rect x="590" y="22" width="178" height="28" rx="14" fill="#25544f" stroke="#5ce0a8" stroke-width="1"/>
-  <circle cx="608" cy="36" r="4" fill="#5ce0a8"/>
-  <text x="620" y="40" fill="#fffef9" font-family="Consolas, monospace" font-size="11">ENDPOINT READY · V4</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Orquestração de Agentes em Grafo, Tool Calling Tipado, Guardrails e Tracing">
+  <rect width="800" height="340" rx="8" fill="#143533"/>
+  <text x="32" y="40" fill="#e8c996" font-family="Consolas, monospace" font-size="12" letter-spacing="1.4">ARQUITETURA DE AGENTES · GRAFO DE ESTADOS, TOOL CALLING, GUARDRAILS &amp; TRACING</text>
 
-  <!-- Left: BIA Agent Live Architecture -->
-  <rect x="32" y="84" width="355" height="212" rx="6" fill="#1a403d" stroke="#5ce0a8" stroke-width="2"/>
-  <text x="52" y="114" fill="#5ce0a8" font-family="Consolas, monospace" font-size="12" font-weight="bold">AGENTE BIA EM PRODUÇÃO (MODEL SERVING)</text>
-  <text x="52" y="146" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold">MLflow ResponsesAgent</text>
-  <text x="52" y="170" fill="#e8c996" font-family="Consolas, monospace" font-size="11">workspace.estudos_ai.beatriz_portfolio_agent</text>
-  <text x="52" y="198" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Llama 3.3 70B Instruct + Memória Curada</text>
-  <text x="52" y="218" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• @mlflow.trace (AGENT / CHAIN / CHAT_MODEL)</text>
-  <text x="52" y="238" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Integrado ao Databricks App &amp; GitHub Pages</text>
-  <rect x="52" y="252" width="315" height="28" rx="4" fill="#122f2d"/>
-  <text x="64" y="270" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">Traces persistidos no Experimento &amp; Delta</text>
+  <rect x="32" y="74" width="165" height="200" rx="6" fill="#1a403d" stroke="#9ab3a8" stroke-width="1.5"/>
+  <text x="48" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">01 / ROTEADOR</text>
+  <text x="48" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Intenção &amp; Escopo</text>
+  <text x="48" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Valida Permissão</text>
+  <text x="48" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Detecta Ambiguidade</text>
+  <text x="48" y="204" fill="#f2a68d" font-family="Consolas, monospace" font-size="11">• Barra SQL Injection</text>
+  <text x="48" y="226" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Define Orçamento</text>
 
-  <!-- Right: Investigation State Machine -->
-  <rect x="413" y="84" width="355" height="212" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
-  <text x="433" y="114" fill="#e8c996" font-family="Consolas, monospace" font-size="12" font-weight="bold">ORQUESTRAÇÃO &amp; GUARDRAILS (AURORA)</text>
-  <text x="433" y="156" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="32" font-weight="bold">16 / 16</text>
-  <text x="433" y="178" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Cenários Operacionais Aprovados (100%)</text>
-  <text x="433" y="208" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">✓ Bloqueio de acesso cruzado entre unidades</text>
-  <text x="433" y="228" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">✓ Recusa determinística de SQL Injection</text>
-  <text x="433" y="248" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">✓ Orçamento máx: 4 tool calls + 1 revisão</text>
-  <text x="433" y="268" fill="#e8c996" font-family="Consolas, monospace" font-size="11">✓ Degradação graciosa em Timeout</text>
+  <path d="M201 174 L225 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="225,169 233,174 225,179" fill="#e8c996"/>
 
-  <text x="32" y="346" fill="#bfd0c5" font-family="Consolas, monospace" font-size="12">Databricks Model Serving · FastAPI Proxy · MLflow 3 Tracing · Governança Unity Catalog</text>
+  <rect x="237" y="74" width="185" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="253" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">02 / ANALISTA &amp; TOOLS</text>
+  <text x="253" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Ferramentas Tipadas</text>
+  <text x="253" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Consulta Indicadores</text>
+  <text x="253" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Busca Normas (RAG)</text>
+  <text x="253" y="204" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• Teto: máx 4 chamadas</text>
+  <text x="253" y="226" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Sem Execução Livre</text>
+
+  <path d="M426 174 L450 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="450,169 458,174 450,179" fill="#e8c996"/>
+
+  <rect x="462" y="74" width="155" height="200" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="478" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">03 / NÓ REVISOR</text>
+  <text x="478" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Grounding Gate</text>
+  <text x="478" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Audita Evidências</text>
+  <text x="478" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Trata Timeouts</text>
+  <text x="478" y="204" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">• Aprova ou Recusa</text>
+
+  <path d="M621 174 L645 174" stroke="#5ce0a8" stroke-width="2"/>
+  <polygon points="645,169 653,174 645,179" fill="#5ce0a8"/>
+
+  <rect x="657" y="74" width="111" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="669" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10" font-weight="bold">04 / TRACING</text>
+  <text x="669" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold">Observabilidade</text>
+  <text x="669" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Spans AGENT</text>
+  <text x="669" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Latência / Etapa</text>
+  <text x="669" y="204" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">• Auditoria Delta</text>
+
+  <text x="32" y="312" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">Controle determinístico de fluxo, proteção contra loops infinitos e rastreabilidade completa de chamadas.</text>
 </svg>

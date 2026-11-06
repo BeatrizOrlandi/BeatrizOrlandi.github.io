@@ -1,50 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Experimentos de Prompts Estruturados e Comparação de LLMs no MLflow">
-  <defs>
-    <linearGradient id="bg04" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#163c3a"/>
-      <stop offset="100%" stop-color="#112b29"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="380" rx="8" fill="url(#bg04)"/>
-  <text x="32" y="42" fill="#e8c996" font-family="Consolas, monospace" font-size="13" letter-spacing="1.5">04 / STRUCTURED PROMPT ENGINEERING &amp; LLM BENCHMARK · MLFLOW</text>
-  <rect x="600" y="22" width="168" height="28" rx="14" fill="#25544f" stroke="#5ce0a8" stroke-width="1"/>
-  <text x="616" y="40" fill="#fffef9" font-family="Consolas, monospace" font-size="11">60 EXECUÇÕES MLFLOW</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Engenharia de Prompts, Contratos JSON Schema, Cache, Roteamento e LLM Eval">
+  <rect width="800" height="340" rx="8" fill="#143533"/>
+  <text x="32" y="40" fill="#e8c996" font-family="Consolas, monospace" font-size="12" letter-spacing="1.4">LLM ENGINEERING · STRUCTURED OUTPUTS, CACHE, ROTEAMENTO &amp; EVAL SISTEMÁTICO</text>
 
-  <!-- Left Panel: Ablation Bar Chart -->
-  <rect x="32" y="84" width="356" height="210" rx="6" fill="#1a403d" stroke="#476e6a" stroke-width="1.5"/>
-  <text x="52" y="114" fill="#e8c996" font-family="Consolas, monospace" font-size="12" font-weight="bold">ABLAÇÃO DE PROMPTS (CONTRATO JSON)</text>
+  <rect x="32" y="74" width="230" height="200" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="50" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">01 / CONTRATO DE PROMPT</text>
+  <text x="50" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Design Determinístico</text>
+  <text x="50" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Delimitação XML Anti-Injection</text>
+  <text x="50" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• JSON Schema / Pydantic</text>
+  <text x="50" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Versionamento por Hash SHA</text>
+  <text x="50" y="226" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">• Temperatura Zero / Reprodutível</text>
 
-  <!-- Direct Prompt Bar -->
-  <text x="52" y="148" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Prompt Direto (Sem Schema)</text>
-  <rect x="52" y="156" width="280" height="18" rx="3" fill="#2b4f4c"/>
-  <rect x="52" y="156" width="12" height="18" rx="3" fill="#e07a5f"/>
-  <text x="72" y="169" fill="#f2a68d" font-family="Consolas, monospace" font-size="11">0% JSON Estrito (85% acerto livre)</text>
+  <path d="M266 174 L292 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="292,169 300,174 292,179" fill="#e8c996"/>
 
-  <!-- Structured Prompt Llama -->
-  <text x="52" y="200" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Prompt Estruturado · Llama 3.3 70B</text>
-  <rect x="52" y="208" width="280" height="18" rx="3" fill="#5ce0a8"/>
-  <text x="62" y="221" fill="#122f2d" font-family="Consolas, monospace" font-size="11" font-weight="bold">100% JSON Válido &amp; 100% Acurácia</text>
+  <rect x="304" y="74" width="225" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="322" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">02 / CUSTO, CACHE &amp; LATÊNCIA</text>
+  <text x="322" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Eficiência em Produção</text>
+  <text x="322" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Cache de Prompt + Resposta</text>
+  <text x="322" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Roteamento Modelo Rápido vs Pesado</text>
+  <text x="322" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Orçamento Estrito de max_tokens</text>
+  <text x="322" y="226" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• Retry só em Erro Transitório</text>
 
-  <!-- Structured Prompt Qwen3 -->
-  <text x="52" y="252" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Prompt Estruturado · Qwen3 Next 80B</text>
-  <rect x="52" y="260" width="280" height="18" rx="3" fill="#e8c996"/>
-  <text x="62" y="273" fill="#122f2d" font-family="Consolas, monospace" font-size="11" font-weight="bold">100% JSON Válido &amp; 100% Acurácia</text>
+  <path d="M533 174 L559 174" stroke="#5ce0a8" stroke-width="2"/>
+  <polygon points="559,169 567,174 559,179" fill="#5ce0a8"/>
 
-  <!-- Right Panel: Latency & Cost Tradeoff -->
-  <rect x="412" y="84" width="356" height="210" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
-  <text x="432" y="114" fill="#e8c996" font-family="Consolas, monospace" font-size="12" font-weight="bold">LATÊNCIA P50 E EFICIÊNCIA EM PRODUÇÃO</text>
+  <rect x="571" y="74" width="197" height="200" rx="6" fill="#1a403d" stroke="#9ab3a8" stroke-width="1.5"/>
+  <text x="589" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">03 / BANCADA DE EVALS</text>
+  <text x="589" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Rigor Experimental</text>
+  <text x="589" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Dataset Congelado</text>
+  <text x="589" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Validador Sintático JSON</text>
+  <text x="589" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Métricas p50 / p95 Latência</text>
+  <text x="589" y="226" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">• Auditoria no MLflow</text>
 
-  <rect x="432" y="134" width="148" height="136" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
-  <text x="448" y="160" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">QWEN3 80B INSTRUCT</text>
-  <text x="448" y="198" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">528 ms</text>
-  <text x="448" y="220" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Latência Mediana</text>
-  <text x="448" y="248" fill="#e8c996" font-family="Consolas, monospace" font-size="11">3x mais rápido ⚡</text>
-
-  <rect x="598" y="134" width="150" height="136" rx="6" fill="#122f2d" stroke="#9ab3a8" stroke-width="1"/>
-  <text x="614" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11" font-weight="bold">LLAMA 3.3 70B</text>
-  <text x="614" y="198" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">1.588 ms</text>
-  <text x="614" y="220" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Latência Mediana</text>
-  <text x="614" y="248" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">20/20 Categorias</text>
-
-  <text x="32" y="346" fill="#bfd0c5" font-family="Consolas, monospace" font-size="12">Validação Pydantic / JSON Schema · Dataset Congelado · Rastreamento Completo no MLflow</text>
+  <text x="32" y="312" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">Substituição de testes ad-hoc por engenharia de prompts orientada a contratos, métricas de latência e custo.</text>
 </svg>

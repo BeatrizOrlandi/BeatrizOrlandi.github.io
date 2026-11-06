@@ -1,48 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Arquitetura RAG de Regulamentos com Databricks Vector Search e Qwen3">
-  <defs>
-    <linearGradient id="bg03" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#143634"/>
-      <stop offset="100%" stop-color="#1f4e4b"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="380" rx="8" fill="url(#bg03)"/>
-  <text x="32" y="42" fill="#e8c996" font-family="Consolas, monospace" font-size="13" letter-spacing="1.5">03 / HYBRID &amp; VECTOR SEARCH RAG · DATABRICKS VECTOR SEARCH</text>
-  <rect x="608" y="22" width="160" height="28" rx="14" fill="#25544f" stroke="#5ce0a8" stroke-width="1"/>
-  <text x="624" y="40" fill="#fffef9" font-family="Consolas, monospace" font-size="11">93,3% TOP-1 ACCURACY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Arquitetura RAG: Indexação Incremental, Busca Híbrida, Filtragem de Governança e Re-ranking">
+  <rect width="800" height="340" rx="8" fill="#143533"/>
+  <text x="32" y="40" fill="#e8c996" font-family="Consolas, monospace" font-size="12" letter-spacing="1.4">PIPELINE RAG · INDEXAÇÃO INCREMENTAL, BUSCA HÍBRIDA, FILTROS &amp; RE-RANKING</text>
 
-  <!-- Corpus + CDF -->
-  <rect x="32" y="92" width="170" height="190" rx="6" fill="#1a403d" stroke="#9ab3a8" stroke-width="1.5"/>
-  <text x="48" y="120" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">CORPUS VERSIONADO</text>
-  <text x="48" y="156" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold">13 Docs</text>
-  <text x="48" y="178" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Delta Lake + CDF Ativo</text>
-  <text x="48" y="210" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• library_id</text>
-  <text x="48" y="230" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• valid_from / valid_to</text>
-  <text x="48" y="250" fill="#9ab3a8" font-family="Consolas, monospace" font-size="11">• versionamento estrito</text>
+  <rect x="32" y="74" width="170" height="200" rx="6" fill="#1a403d" stroke="#9ab3a8" stroke-width="1.5"/>
+  <text x="48" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">01 / INDEXAÇÃO &amp; CDF</text>
+  <text x="48" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Chunking Semântico</text>
+  <text x="48" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Metadados de Escopo</text>
+  <text x="48" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Janela de Vigência</text>
+  <text x="48" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Delta Change Data Feed</text>
+  <text x="48" y="226" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">• Sync Incremental</text>
 
-  <path d="M206 186 L234 186" stroke="#e8c996" stroke-width="2"/>
-  <polygon points="234,181 242,186 234,191" fill="#e8c996"/>
+  <path d="M206 174 L230 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="230,169 238,174 230,179" fill="#e8c996"/>
 
-  <!-- Vector Search + Qwen3 -->
-  <rect x="246" y="92" width="250" height="190" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="2"/>
-  <text x="266" y="120" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">ÍNDICE DELTA SYNC + HÍBRIDO</text>
-  <text x="266" y="154" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold">Qwen3 Embedding 0.6B</text>
-  <text x="266" y="178" fill="#e8c996" font-family="Consolas, monospace" font-size="12">1.024 dimensões + TF-IDF</text>
-  <rect x="266" y="196" width="210" height="66" rx="4" fill="#1b4340"/>
-  <text x="278" y="218" fill="#fffef9" font-family="Consolas, monospace" font-size="11">Filtros determinísticos:</text>
-  <text x="278" y="236" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">library_id == escopo_autorizado</text>
-  <text x="278" y="252" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">valid_from &lt;= data &lt;= valid_to</text>
+  <rect x="242" y="74" width="180" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="258" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">02 / BUSCA HÍBRIDA</text>
+  <text x="258" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Vetorial + Lexical</text>
+  <text x="258" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Embeddings Densos (ANN)</text>
+  <text x="258" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Match Exato (BM25/TF-IDF)</text>
+  <text x="258" y="204" fill="#e8c996" font-family="Consolas, monospace" font-size="11">• Filtro Pré-Recuperação</text>
+  <text x="258" y="226" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Prevenção Cross-Tenant</text>
 
-  <path d="M500 186 L528 186" stroke="#e8c996" stroke-width="2"/>
-  <polygon points="528,181 536,186 528,191" fill="#e8c996"/>
+  <path d="M426 174 L450 174" stroke="#e8c996" stroke-width="2"/>
+  <polygon points="450,169 458,174 450,179" fill="#e8c996"/>
 
-  <!-- Evaluation Results -->
-  <rect x="540" y="92" width="228" height="190" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
-  <text x="558" y="120" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">BENCHMARK AUDITADO</text>
-  <text x="558" y="160" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="32" font-weight="bold">14 / 15</text>
-  <text x="558" y="182" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Top-1 e Recall@2 (93,3%)</text>
-  <text x="558" y="214" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">✓ 8/8 Checks Integridade</text>
-  <text x="558" y="234" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11">✓ 16/16 Baseline Lexical</text>
-  <text x="558" y="254" fill="#f2a68d" font-family="Consolas, monospace" font-size="11">! 1 Caso de falha documentado</text>
+  <rect x="462" y="74" width="150" height="200" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="478" y="102" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">03 / RE-RANK &amp; GATE</text>
+  <text x="478" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold">Pós-Verificação</text>
+  <text x="478" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Re-ranking Top-K</text>
+  <text x="478" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Checagem de Vigência</text>
+  <text x="478" y="204" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">• Limiar de Abstenção</text>
 
-  <text x="32" y="346" fill="#bfd0c5" font-family="Consolas, monospace" font-size="12">Prevenção de Vazamento entre Bibliotecas · Rastreabilidade de Versão e Vigência</text>
+  <path d="M616 174 L640 174" stroke="#5ce0a8" stroke-width="2"/>
+  <polygon points="640,169 648,174 640,179" fill="#5ce0a8"/>
+
+  <rect x="652" y="74" width="116" height="200" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="664" y="102" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10" font-weight="bold">04 / GROUNDING</text>
+  <text x="664" y="130" fill="#fffef9" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold">Citação Estrita</text>
+  <text x="664" y="160" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• ID + Versão</text>
+  <text x="664" y="182" fill="#bfd0c5" font-family="Consolas, monospace" font-size="10">• Sem Extrapolar</text>
+  <text x="664" y="204" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">• Retrieval Eval</text>
+
+  <text x="32" y="312" fill="#bfd0c5" font-family="Consolas, monospace" font-size="11">Governança de acesso aplicada no código (fora do prompt) com rastreabilidade de documento e versão.</text>
 </svg>

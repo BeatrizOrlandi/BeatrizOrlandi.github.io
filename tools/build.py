@@ -52,7 +52,11 @@ def public_links():
 
 def layout(title, description, body, prefix="", page="home", canonical_path="index.html"):
     home = prefix + "index.html"
-    nav = ''.join(f'<a href="{home}#{anchor}">{label}</a>' for anchor, label in [("impacto", "Impacto & IA"), ("projetos", "Projetos"), ("sobre", "Sobre"), ("trajetoria", "Trajetória")])
+    nav = ''.join(f'<a href="{home}#{anchor}">{label}</a>' for anchor, label in [
+        ("experiencia", "Experiência"),
+        ("arquitetura-ia", "Técnicas & Arquitetura"),
+        ("projetos", "Projetos"),
+    ])
     canonical = ""
     site_url = PROFILE.get("site_url", "").strip().rstrip("/")
     if site_url:
@@ -73,8 +77,8 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
   {canonical}
   <title>{e(title)}</title>
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia5">
-  <script src="{prefix}assets/site.js?v=bia5" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/styles.css?v=bia6">
+  <script src="{prefix}assets/site.js?v=bia6" defer></script>
 </head>
 <body data-page="{e(page)}">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -83,7 +87,7 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
     <nav aria-label="Navegação principal">{nav}<a href="{prefix}documentacao/prompts.html">Prompts ↗</a><a class="nav-cv" href="{prefix}curriculo.html">Currículo <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="conteudo">{body}</main>
-  <footer class="site-footer wrap"><div><a class="footer-name" href="{home}">{e(PROFILE['nome'])}<span>Engenheira de IA</span></a><p>Portfólio de Engenharia de IA · Python, Databricks, LLMs, RAG, Agentes e MLflow.</p></div><div class="footer-links">{public_links()}<a href="{prefix}documentacao/prompts.html">Catálogo de Prompts ↗</a><a href="{prefix}curriculo.html">Ver currículo ↗</a><a href="{home}#projetos">Explorar projetos ↑</a></div><p class="fineprint">© {date.fromisoformat(PROFILE['atualizacao_site']).year} {e(PROFILE['nome'])}. Projetos executados e validados no Databricks com código aberto no GitHub.<br>Site atualizado em 06/11/2026 · 8 de 8 projetos implementados e auditados.</p></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" href="{home}">{e(PROFILE['nome'])}<span>Engenheira de IA</span></a><p>Engenharia de IA · Agentes, RAG, LLMs, Guardrails, Observabilidade e Dados.</p></div><div class="footer-links">{public_links()}<a href="{prefix}documentacao/prompts.html">Engenharia de Prompts ↗</a><a href="{prefix}curriculo.html">Ver currículo ↗</a><a href="{home}#experiencia">Experiência ↑</a></div><p class="fineprint">© {date.fromisoformat(PROFILE['atualizacao_site']).year} {e(PROFILE['nome'])}. Portfólio profissional e estudos de arquitetura de IA.</p></footer>
   <button type="button" class="chat-fab" data-chat-toggle aria-expanded="false" aria-controls="chat-assistant">
     <span class="chat-fab-dot" aria-hidden="true"></span>
     <span>Conversar com a BIA (IA) ✨</span>
@@ -92,25 +96,25 @@ def layout(title, description, body, prefix="", page="home", canonical_path="ind
     <div class="chat-header">
       <div class="chat-header-info">
         <strong>BIA · Assistente de IA da Beatriz</strong>
-        <small>Databricks Model Serving · Regra 80/15/5</small>
+        <small>Agente de IA · Arquitetura, Carreira &amp; Projetos</small>
       </div>
       <button type="button" class="chat-close" data-chat-close aria-label="Fechar chat">Fechar ✕</button>
     </div>
     <div class="chat-messages" data-chat-messages aria-live="polite">
       <div class="chat-bubble assistant">
         <p>Olá! Eu sou a <strong>BIA</strong> (<em>Beatriz Intelligence Assistant</em>), assistente de IA do portfólio da Beatriz Helena.</p>
-        <p>Como a documentação técnica dos 8 projetos é bem detalhada, posso resumir os pontos principais para poupar seu tempo, explicar qualquer arquitetura ou já te passar o <strong>WhatsApp</strong> e <strong>e-mail</strong> dela. Como posso te ajudar hoje?</p>
+        <p>Posso resumir a experiência profissional dela, explicar como ela estrutura arquiteturas de Agentes, RAG, Guardrails e Evals, ou já te passar o <strong>WhatsApp</strong> e <strong>e-mail</strong> direto. Como posso ajudar?</p>
       </div>
     </div>
     <div class="chat-chips" aria-label="Perguntas sugeridas">
-      <button type="button" class="chat-chip" data-chat-prompt="Qual projeto você recomenda conhecer primeiro?">Por onde começar? 🚀</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Qual é a experiência profissional e stack principal da Beatriz?">Experiência &amp; Stack 💼</button>
+      <button type="button" class="chat-chip" data-chat-prompt="Como a Beatriz arquiteta soluções de RAG, Agentes e Guardrails?">RAG, Agentes &amp; Guardrails 🧠</button>
       <button type="button" class="chat-chip" data-chat-prompt="Você tem o WhatsApp e contato da Beatriz?">WhatsApp &amp; Contato 📱</button>
       <button type="button" class="chat-chip" data-chat-prompt="Por que devo contratar a Beatriz para o meu time de IA?">Por que contratar? 💡</button>
-      <button type="button" class="chat-chip" data-chat-prompt="Me explica como funciona o RAG e Vector Search dela?">Arquitetura RAG 🧠</button>
     </div>
     <form class="chat-form" data-chat-form>
       <label class="sr-only" for="chat-input-field">Pergunte qualquer coisa para a BIA</label>
-      <input id="chat-input-field" data-chat-input type="text" placeholder="Pergunte qualquer coisa para a BIA..." autocomplete="off">
+      <input id="chat-input-field" data-chat-input type="text" placeholder="Pergunte sobre experiência, RAG, agentes ou contato..." autocomplete="off">
       <button type="submit">Enviar</button>
     </form>
   </aside>
@@ -124,16 +128,15 @@ def metrics(items):
 
 
 def project_card(p):
-    img_html = f'<a class="card-media" href="projetos/{p["slug"]}.html" tabindex="-1" aria-hidden="true"><img src="{e(p["imagem"])}" alt="" loading="lazy" width="800" height="380"></a>' if p.get("imagem") else ""
-    res_strip = ""
-    if p.get("resultados"):
-        res_strip = '<div class="card-kpis">' + ''.join(f'<span><strong>{e(r["valor"])}</strong> <small>{e(r["rotulo"])}</small></span>' for r in p["resultados"][:2]) + '</div>'
-    return f'''<article class="project-card {'featured' if p['numero'] == '01' else ''}" data-project data-group="{e(p['grupo'])}" data-search="{e(' '.join([p['titulo'], p['subtitulo'], p['categoria'], *p['stack']]))}">
-  {img_html}
+    # Home page card focuses strictly on engineering problem, reasoning, and techniques (no synthetic metrics or heavy banners)
+    decisions_preview = '<ul class="card-techniques">' + ''.join(f'<li>{e(d)}</li>' for d in p['decisoes'][:2]) + '</ul>'
+    return f'''<article class="project-card" data-project data-group="{e(p['grupo'])}" data-search="{e(' '.join([p['titulo'], p['subtitulo'], p['categoria'], *p['stack']]))}">
   <div class="card-meta"><span class="mono">{p['numero']} / {e(p['categoria'])}</span><span class="status {p['grupo']}">{e(p['status'])}</span></div>
-  <h3><a href="projetos/{p['slug']}.html">{e(p['titulo'])}<span aria-hidden="true">↗</span></a></h3><p>{e(p['resumo'])}</p>
-  {res_strip}
-  {tags(p['stack'][:4])}<a class="text-link" href="projetos/{p['slug']}.html" aria-label="Ver estudo: {e(p['subtitulo'])}">Ver arquitetura, código e métricas <span aria-hidden="true">→</span></a>
+  <h3><a href="projetos/{p['slug']}.html">{e(p['titulo'])}<span aria-hidden="true">↗</span></a></h3>
+  <p>{e(p['resumo'])}</p>
+  {decisions_preview}
+  {tags(p['stack'])}
+  <a class="text-link" href="projetos/{p['slug']}.html" aria-label="Ver arquitetura e detalhes: {e(p['titulo'])}">Ver arquitetura, raciocínio e implementação <span aria-hidden="true">→</span></a>
 </article>'''
 
 
@@ -143,108 +146,200 @@ def trajectory():
 
 def build_home():
     skills = ''.join(f'''<article class="skill"><span class="mono">0{i + 1}</span><h3>{e(x['titulo'])}</h3><p>{e(x['descricao'])}</p>{tags(x['tecnologias'])}</article>''' for i, x in enumerate(PROFILE['habilidades']))
-    impl_count = sum(1 for p in PROJECTS if p['grupo'] == 'implementado')
-    plan_count = sum(1 for p in PROJECTS if p['grupo'] == 'planejado')
     body = f'''
 <section class="hero wrap" aria-labelledby="hero-title">
-  <div class="hero-copy"><p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> PYTHON / DATABRICKS / LLMS / AGENTES EM PRODUÇÃO</p><h1 id="hero-title">Beatriz<br>Helena</h1><p class="hero-role">Engenheira de IA · Efí Bank</p><p class="hero-intro">Construo sistemas de IA generativa, pipelines Lakehouse, automações que economizam horas reais, prompts estruturados avaliados com MLflow e agentes em produção no Databricks Model Serving.</p><div class="actions"><a class="button primary" href="#projetos">Explorar 8 projetos <span aria-hidden="true">↘</span></a><button type="button" class="button secondary" data-open-chat>Conversar com a BIA (minha IA) ✨</button><a class="text-link" href="documentacao/prompts.html">Ver engenharia de prompts →</a></div></div>
-  <div class="system-panel"><div class="panel-label mono"><span class="notebook-name">● ● ● &nbsp; bia_agent_serving.py</span><span>PROD / MODEL SERVING</span></div><p class="panel-heading">Ecossistema<br><span>Aurora &amp; BIA</span></p><p class="panel-caption mono">8 PROJETOS EXECUTADOS NO DATABRICKS · UNITY CATALOG</p><ol class="system-flow"><li><span>01</span><div><strong>Prompts &amp; LLMs (100% JSON)</strong><small>60 gerações no MLflow · Qwen3 80B (528 ms) &amp; Llama 3.3 70B</small></div><b aria-hidden="true">↓</b></li><li><span>02</span><div><strong>Automações (18h/mês → 42s)</strong><small>Pipeline Medallion, Gate 24/24 e Boletins Idempotentes</small></div><b aria-hidden="true">↓</b></li><li><span>03</span><div><strong>Agente BIA + RAG (93,3% Top-1)</strong><small>Model Serving ativo, MLflow Tracing e Vector Search</small></div></li></ol><a href="projetos/agentes-investigacao.html">Ver arquitetura do Agente BIA e Orquestração <span aria-hidden="true">↗</span></a></div>
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> ENGENHARIA DE IA · AGENTES, RAG, LLMS &amp; DADOS</p>
+    <h1 id="hero-title">Beatriz<br>Helena</h1>
+    <p class="hero-role">Engenheira de IA · Efí Bank</p>
+    <p class="hero-intro">Desenvolvo soluções de IA Generativa de ponta a ponta — da concepção arquitetural à operação em produção. Atuo na construção de agentes de IA, pipelines RAG (indexação, busca semântica/híbrida e re-ranking), avaliação sistemática (Evals), guardrails, controle de custos e integrações corporativas.</p>
+    <div class="actions">
+      <a class="button primary" href="#experiencia">Experiência &amp; Currículo <span aria-hidden="true">↘</span></a>
+      <button type="button" class="button secondary" data-open-chat>Conversar com a BIA (minha IA) ✨</button>
+      <a class="text-link" href="#arquitetura-ia">Ver técnicas e arquitetura →</a>
+    </div>
+  </div>
+  <div class="system-panel">
+    <div class="panel-label mono"><span class="notebook-name">● ● ● &nbsp; ai_engineering_stack.py</span><span>ARQUITETURA EM PRODUÇÃO</span></div>
+    <p class="panel-heading">Engenharia<br><span>de Sistemas de IA</span></p>
+    <p class="panel-caption mono">DO CONTEXTO BRUTO À DECISÃO GOVERNADA</p>
+    <ol class="system-flow">
+      <li><span>01</span><div><strong>RAG, Indexação &amp; Re-ranking</strong><small>Chunking semântico, busca vetorial + lexical e filtros de governança</small></div><b aria-hidden="true">↓</b></li>
+      <li><span>02</span><div><strong>Orquestração de Agentes &amp; Tools</strong><small>Grafos de estado, roteamento de intenção, memória e APIs</small></div><b aria-hidden="true">↓</b></li>
+      <li><span>03</span><div><strong>Guardrails, Evals, Cache &amp; Custos</strong><small>Contratos JSON Schema, observabilidade de traces e eficiência</small></div></li>
+    </ol>
+    <a href="#arquitetura-ia">Explorar raciocínio de engenharia e padrões aplicados <span aria-hidden="true">↗</span></a>
+  </div>
 </section>
-<div class="expertise-strip"><div class="wrap"><span>Python &amp; PySpark</span><span>Databricks &amp; Unity Catalog</span><span>LLMs &amp; Prompt Engineering</span><span>Vector Search &amp; RAG</span><span>LangGraph &amp; Model Serving</span><span>MLflow 3 Tracing</span></div></div>
 
-<section id="impacto" class="section wrap pillars-section" aria-labelledby="pillars-title">
+<div class="expertise-strip"><div class="wrap"><span>Agentes &amp; LangGraph</span><span>RAG, Busca Híbrida &amp; Re-ranking</span><span>Prompt Engineering &amp; Evals</span><span>Guardrails, Cache &amp; Custos</span><span>Python, SQL &amp; Dados</span><span>Integrações (WhatsApp, Slack, CRM)</span></div></div>
+
+<section id="experiencia" class="section wrap" aria-labelledby="career-title">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">00 / ENGENHARIA DE IA ORIENTADA A RESULTADOS</p>
-      <h2 id="pillars-title">Quatro pilares em produção</h2>
+      <p class="eyebrow">01 / CURRÍCULO &amp; TRAJETÓRIA PROFISSIONAL</p>
+      <h2 id="career-title">Experiência, formação<br>e visão de produção</h2>
     </div>
-    <p>Evidências práticas de experimentação rigorosa com LLMs, automação de processos, ferramentas deployadas e impacto mensurável.</p>
+    <a class="button secondary" href="curriculo.html">Abrir currículo para impressão ↗</a>
+  </div>
+
+  <div class="about-layout" style="margin-bottom: 52px;">
+    <div>
+      <p class="eyebrow">PERFIL PROFISSIONAL</p>
+      <h3 style="font-size: 1.75rem; line-height: 1.25;">Engenharia de Software, Dados e IA Generativa conectadas ao negócio</h3>
+    </div>
+    <div class="about-copy" style="padding-top: 0;">
+      {''.join(f'<p>{e(x)}</p>' for x in PROFILE['sobre'])}
+      <p class="about-detail">{e(PROFILE['resumo'])}</p>
+    </div>
+  </div>
+
+  <div class="skills-grid" style="margin-bottom: 64px;">{skills}</div>
+
+  <div class="career-layout">
+    {trajectory()}
+    <aside class="education">
+      <p class="eyebrow">FORMAÇÃO ACADÊMICA</p>
+      <div class="education-mark" aria-hidden="true">↗</div>
+      <h3>{e(PROFILE['formacao']['curso'])}</h3>
+      <p>{e(PROFILE['formacao']['instituicao'])}</p>
+      <span class="mono">BASE SÓLIDA EM ALGORITMOS, ENGENHARIA DE SOFTWARE, DADOS E IA</span>
+    </aside>
+  </div>
+
+  <figure class="case-diagram" style="margin-top: 64px; margin-bottom: 0;">
+    <img src="assets/arquitetura-corporativa-ia.svg" alt="Arquitetura de referência para sistemas de IA em produção: Canais, Guardrails, Orquestração de Agentes, Cache, RAG Híbrido e Observabilidade" width="960" height="360" loading="lazy">
+    <figcaption class="mono">REPRESENTAÇÃO ARQUITETURAL · PADRÃO DE INTEGRAÇÃO DE AGENTES, RAG HÍBRIDO, GUARDRAILS E CONTROLE DE CUSTOS EM AMBIENTES CORPORATIVOS</figcaption>
+  </figure>
+</section>
+
+<section id="arquitetura-ia" class="section wrap pillars-section" aria-labelledby="pillars-title" style="border-top: 1px solid var(--line);">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">02 / RACIOCÍNIO DE ENGENHARIA &amp; TÉCNICAS APLICADAS</p>
+      <h2 id="pillars-title">Como projeto sistemas de IA</h2>
+    </div>
+    <p>Mais importante do que o modelo escolhido é a engenharia ao redor dele: indexação, recuperação, guardrails, avaliação contínua, cache, governança e controle de custos.</p>
   </div>
   <div class="pillars-grid">
     <article class="pillar-card">
-      <div class="pillar-top"><span class="mono">PILAR 01 / LLMS &amp; PROMPTS</span><span class="pillar-badge">100% JSON Estrito</span></div>
-      <h3>Prompts bem estruturados e experimentação com LLMs</h3>
-      <p>Bancada experimental executada no Databricks comparando prompts diretos contra contratos JSON estritos com validação <code>Pydantic</code> e defesa contra <em>prompt injection</em> em múltiplos Foundation Models (<strong>Meta Llama 3.3 70B</strong> e <strong>Qwen3 Next 80B Instruct</strong>).</p>
+      <div class="pillar-top"><span class="mono">TÉCNICA 01 / RETRIEVAL &amp; CONTEXTO</span><span class="pillar-badge">Indexação · Busca Híbrida · Re-ranking</span></div>
+      <h3>RAG, Indexação Incremental e Busca Semântica</h3>
+      <p>A qualidade da geração depende diretamente da precisão do contexto recuperado. Estruturo pipelines RAG tratando ingestão, representação e filtragem antes mesmo de chamar o LLM:</p>
       <ul class="pillar-metrics">
-        <li><strong>0% → 100%</strong> de conformidade estrita ao schema JSON após estruturação contratual do prompt.</li>
-        <li><strong>528 ms vs. 1.588 ms</strong> de latência mediana (p50) medida em 60 execuções rastreadas no MLflow.</li>
+        <li><strong>Chunking &amp; Indexação Incremental (CDC/CDF):</strong> segmentação preservando hierarquia documental e metadados temporais, reindexando apenas documentos alterados para reduzir custo de embeddings.</li>
+        <li><strong>Busca Híbrida &amp; Re-ranking:</strong> combinação de busca vetorial densa (captura de intenção e paráfrases) com busca lexical (BM25/TF-IDF para códigos, siglas e termos exatos), seguida de filtragem determinística de permissão/vigência e re-ranking de relevância.</li>
       </ul>
       <div class="pillar-links">
-        <a href="documentacao/prompts.html">Catálogo de Prompts &amp; Contratos ↗</a>
-        <a href="projetos/laboratorio-llms.html">Estudo 04: Laboratório LLMs →</a>
+        <a href="projetos/rag-regulamentos.html">Ver arquitetura de RAG e Busca Híbrida →</a>
       </div>
     </article>
 
     <article class="pillar-card">
-      <div class="pillar-top"><span class="mono">PILAR 02 / AUTOMAÇÃO REAL</span><span class="pillar-badge">18h/mês → 42s</span></div>
-      <h3>Automações que economizaram horas reais em processos</h3>
-      <p>Substituição de fluxos manuais de extração, consolidação de planilhas e conferência numérica por pipelines idempotentes acoplados ao Gate de Qualidade na camada Gold — além de automações corporativas em produção na <strong>Efí Bank</strong> integrando Python, Snowflake, WhatsApp, Slack e Salesforce.</p>
+      <div class="pillar-top"><span class="mono">TÉCNICA 02 / PROMPTS &amp; AVALIAÇÃO</span><span class="pillar-badge">Structured Outputs · LLM Eval</span></div>
+      <h3>Engenharia de Prompts, Contratos e Evals</h3>
+      <p>Prompts em produção são contratos de software, não textos improvisados. Aplico engenharia sistemática para garantir saídas determinísticas e medir regressões a cada mudança:</p>
       <ul class="pillar-metrics">
-        <li><strong>~18 horas/mês economizadas</strong> na geração e auditoria mensal de relatórios multiunidade (reduzido para <strong>42 segundos</strong> por execução).</li>
-        <li><strong>Zero retrabalho ou duplicação</strong> garantido por chave de idempotência SHA e conferência numérica automática.</li>
+        <li><strong>Structured Outputs (JSON Schema / Pydantic):</strong> imposição de schemas tipados, separação por delimitadores entre instruções de sistema e entradas do usuário, e regras explícitas de abstenção quando faltar evidência.</li>
+        <li><strong>Bancada de Avaliação (Evals):</strong> datasets congelados com casos de borda, validação sintática/estrutural automatizada e avaliadores semânticos calibrados (evitando falsos positivos em números e negações).</li>
       </ul>
       <div class="pillar-links">
-        <a href="projetos/boletins-verificaveis.html">Estudo 06: Automação de Boletins ↗</a>
-        <a href="projetos/pipeline-dados-aurora.html">Estudo 01: Pipeline Medallion →</a>
+        <a href="documentacao/prompts.html">Catálogo de Prompts Estruturados ↗</a>
+        <a href="projetos/laboratorio-llms.html">Ver estudo de LLM Eval →</a>
       </div>
     </article>
 
     <article class="pillar-card">
-      <div class="pillar-top"><span class="mono">PILAR 03 / FERRAMENTAS DEPLOYADAS</span><span class="pillar-badge">Model Serving + App + AI/BI</span></div>
-      <h3>Ferramentas internas deployadas, dashboards e agentes</h3>
-      <p>Soluções vivas e operacionais construídas sobre o Databricks: a <strong>BIA</strong> (<code>MLflow ResponsesAgent</code> servida no endpoint <code>beatriz-portfolio-agent</code> com <code>@mlflow.trace</code>), aplicação web em <strong>Databricks Apps (FastAPI)</strong>, <strong>Painel Executivo AI/BI Lakeview</strong> e máquina de estados de investigação.</p>
+      <div class="pillar-top"><span class="mono">TÉCNICA 03 / AGENTES &amp; SEGURANÇA</span><span class="pillar-badge">State Graphs · Guardrails</span></div>
+      <h3>Orquestração de Agentes, Tool Calling e Guardrails</h3>
+      <p>Agentes autônomos exigem limites claros de atuação. Desenho fluxos baseados em máquinas de estados (como LangGraph) onde o modelo decide o caminho, mas o runtime governa as permissões:</p>
       <ul class="pillar-metrics">
-        <li><strong>Agente BIA em produção</strong> respondendo em tempo real neste portfólio com telemetria de spans no MLflow.</li>
-        <li><strong>16/16 cenários aprovados</strong> na máquina de estados operacional (bloqueio de escopo, SQL injection e timeout).</li>
+        <li><strong>Roteamento &amp; Ferramentas Tipadas:</strong> separação entre nós de roteamento, execução de ferramentas somente-leitura com argumentos validados e nó revisor que confere se a resposta possui lastro nas evidências.</li>
+        <li><strong>Guardrails em Camadas:</strong> autorização de escopo fora do prompt (prevenindo vazamento cross-tenant), bloqueio de injeção de comandos/SQL e degradação graciosa em caso de timeout de APIs externas.</li>
       </ul>
       <div class="pillar-links">
-        <a href="projetos/agentes-investigacao.html">Estudo 05: Agentes &amp; Model Serving ↗</a>
-        <a href="https://github.com/BeatrizOrlandi/aurora-05-agentes-investigacao/tree/main/dashboards" rel="noopener noreferrer">Artefato Dashboard AI/BI (JSON) →</a>
+        <a href="projetos/agentes-investigacao.html">Ver arquitetura de Agentes e Guardrails →</a>
       </div>
     </article>
 
     <article class="pillar-card">
-      <div class="pillar-top"><span class="mono">PILAR 04 / IMPACTO MENSURÁVEL</span><span class="pillar-badge">8/8 Projetos Validados</span></div>
-      <h3>Soluções em produção com resultados mensuráveis</h3>
-      <p>Arquiteturas desenhadas para uso real com SLAs, prevenção de vazamento entre unidades, controle de qualidade que preserva a última versão íntegra e benchmarks reprodutíveis com tabelas Delta e evidências públicas.</p>
+      <div class="pillar-top"><span class="mono">TÉCNICA 04 / EFICIÊNCIA &amp; MLOps</span><span class="pillar-badge">Cache · Governança · Custos</span></div>
+      <h3>Cache, Observabilidade, Governança e Controle de Custos</h3>
+      <p>Colocar IA em produção exige previsibilidade financeira, baixa latência e auditoria completa de cada decisão tomada pelo sistema:</p>
       <ul class="pillar-metrics">
-        <li><strong>93,3% Top-1 Accuracy (14/15)</strong> na recuperação vetorial/híbrida com Databricks Vector Search e filtros de vigência.</li>
-        <li><strong>MAE 10,58</strong> em previsão horária causal (vs. 48,81 do baseline) e <strong>92,3% F1</strong> no avaliador semântico BEM com <strong>0 falsos positivos críticos</strong>.</li>
+        <li><strong>Controle de Custos &amp; Cache:</strong> teto rígido de <code>max_tokens</code> e de chamadas de ferramentas por sessão, cache por hash de requisição/semântica e roteamento inteligente para modelos mais leves e rápidos quando a tarefa permite.</li>
+        <li><strong>Tracing, Linhagem &amp; Idempotência:</strong> instrumentação de spans por etapa (latência, inputs, outputs), versionamento de modelos e dados, e chaves de idempotência para evitar reprocessamentos duplicados.</li>
       </ul>
       <div class="pillar-links">
-        <a href="projetos/rag-regulamentos.html">Estudo 03: Vector Search RAG ↗</a>
-        <a href="projetos/pipeline-ml-demanda.html">Estudo 07: Previsão ML Causal →</a>
+        <a href="projetos/qualidade-observabilidade.html">Ver estudo de Qualidade e Governança →</a>
       </div>
     </article>
   </div>
 </section>
 
-<section id="projetos" class="section wrap" aria-labelledby="projects-title"><div class="section-heading"><div><p class="eyebrow">01 / ARQUITETURAS, CÓDIGO E EVIDÊNCIAS</p><h2 id="projects-title">Projetos executados</h2></div><p>Oito projetos completos implementados e validados no Databricks, com diagramas de arquitetura, repositórios públicos no GitHub e métricas auditáveis.</p></div><p class="scope-note">O ecossistema Observatório Aurora conecta seis sistemas integrados (Engenharia de Dados, Qualidade, Vector Search RAG, LLMs, Agentes no Model Serving e Automação). Os estudos 07 e 08 expandem o portfólio com Machine Learning de séries temporais e avaliação semântica com modelos pré-treinados.</p>
-<div class="project-toolbar" hidden data-project-controls><div class="filters" role="group" aria-label="Filtrar projetos por implementação"><button type="button" class="active" data-filter="todos" aria-pressed="true">Todos <span>{len(PROJECTS):02d}</span></button><button type="button" data-filter="implementado" aria-pressed="false">Implementados no Databricks <span>{impl_count:02d}</span></button>{f'<button type="button" data-filter="planejado" aria-pressed="false">Planejados <span>{plan_count:02d}</span></button>' if plan_count else ''}</div><label class="search"><span class="sr-only">Buscar projeto ou tecnologia</span><input data-search-input type="search" placeholder="Buscar projeto ou tecnologia" autocomplete="off"></label></div><p class="filter-count mono" data-filter-count aria-live="polite" hidden>{len(PROJECTS)} projetos</p>
-<div class="project-grid">{''.join(project_card(p) for p in PROJECTS)}</div><p data-empty hidden class="empty-state">Nenhum projeto corresponde à busca. Tente outra tecnologia ou selecione Todos.</p><noscript><p>Todos os projetos estão disponíveis acima. Os filtros funcionam com JavaScript habilitado.</p></noscript>
-<p class="method-note"><strong>Rigor experimental e transparência:</strong> cada projeto inclui código-fonte completo no GitHub, arquivo JSON de evidências públicas, tabelas no Unity Catalog, experimentos no MLflow e documentação explícita dos limites conhecidos.</p></section>
-<section class="evidence-section"><div class="wrap evidence-layout"><div><p class="eyebrow">DATABRICKS / MÉTRICAS CONSOLIDADAS EM PRODUÇÃO</p><h2>Resultados<br>verificáveis</h2><p>Todos os oito projetos possuem execução real registrada em tabelas Delta e experimentos MLflow, cobrindo qualidade de dados, RAG, LLMs, agentes, automação e Machine Learning.</p><a class="text-link" href="documentacao/prompts.html">Inspecionar contratos de prompts e ablação LLM →</a></div>{metrics([{'valor':'100%','rotulo':'JSON válido em prompts estruturados (60 runs MLflow)'}, {'valor':'18h → 42s','rotulo':'economia mensal na automação de boletins'}, {'valor':'16/16','rotulo':'rotas e guardrails aprovados no agente'}])}</div></section>
-<section id="sobre" class="section wrap" aria-labelledby="about-title"><div class="about-layout"><div><p class="eyebrow">02 / SOBRE MIM</p><h2 id="about-title">Sobre mim</h2></div><div class="about-copy">{''.join(f'<p>{e(x)}</p>' for x in PROFILE['sobre'])}</div></div><div class="skills-grid">{skills}</div></section>
-<section id="trajetoria" class="section wrap trajectory-section" aria-labelledby="career-title"><div class="section-heading"><div><p class="eyebrow">03 / TRAJETÓRIA</p><h2 id="career-title">Experiência<br>e formação</h2></div><a class="button secondary" href="curriculo.html">Currículo para impressão ↗</a></div><div class="career-layout">{trajectory()}<aside class="education"><p class="eyebrow">FORMAÇÃO</p><div class="education-mark" aria-hidden="true">↗</div><h3>{e(PROFILE['formacao']['curso'])}</h3><p>{e(PROFILE['formacao']['instituicao'])}</p><span class="mono">COMPUTAÇÃO / DADOS / IA</span></aside></div></section>
+<section id="projetos" class="section wrap" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">03 / ESTUDOS DE ARQUITETURA &amp; IMPLEMENTAÇÃO</p>
+      <h2 id="projects-title">Projetos técnicos</h2>
+    </div>
+    <p>Oito implementações práticas detalhando o problema de engenharia, a arquitetura adotada, as decisões de trade-off e o código-fonte. Clique em qualquer projeto para ver os diagramas, testes e detalhes de execução.</p>
+  </div>
+  <div class="project-toolbar" hidden data-project-controls>
+    <div class="filters" role="group" aria-label="Filtrar projetos">
+      <button type="button" class="active" data-filter="todos" aria-pressed="true">Todos <span>{len(PROJECTS):02d}</span></button>
+    </div>
+    <label class="search"><span class="sr-only">Buscar projeto ou técnica</span><input data-search-input type="search" placeholder="Buscar técnica (ex: RAG, agentes, eval, cache...)" autocomplete="off"></label>
+  </div>
+  <p class="filter-count mono" data-filter-count aria-live="polite" hidden>{len(PROJECTS)} projetos</p>
+  <div class="project-grid">{''.join(project_card(p) for p in PROJECTS)}</div>
+  <p data-empty hidden class="empty-state">Nenhum projeto corresponde à busca. Tente outra tecnologia ou técnica.</p>
+</section>
 '''
-    write("index.html", layout(f"{PROFILE['nome']} — Engenharia de IA", "Portfólio de Beatriz Helena: IA generativa, prompts estruturados, RAG, agentes no Databricks Model Serving, automações e MLflow.", body))
+    write("index.html", layout(f"{PROFILE['nome']} — Engenheira de IA", "Portfólio e currículo de Beatriz Helena, Engenheira de IA: Agentes, RAG, Busca Semântica, Re-ranking, Prompt Engineering, Evals, Guardrails e Dados.", body))
 
 
 def build_projects():
     for index, p in enumerate(PROJECTS):
         next_p = PROJECTS[(index + 1) % len(PROJECTS)]
-        outcome = metrics(p['resultados']) if p['resultados'] else '<p class="plan-callout"><strong>Design e requisitos disponíveis.</strong> Esta trilha ainda não tem resultados de execução. O planejamento detalha os critérios de aceite futuros.</p>'
-        evidence = f'<a class="text-link" href="../evidencias/{p["evidencia"]}" download>Baixar evidência resumida (JSON) ↓</a>' if p['evidencia'] else ''
-        diagram = f'<figure class="case-diagram"><img src="../{e(p["imagem"])}" alt="Diagrama técnico de arquitetura e resultados: {e(p["titulo"])}" width="800" height="380"><figcaption class="mono">FIGURA {p["numero"]} · ARQUITETURA EXECUTADA E MÉTRICAS AUDITADAS NO DATABRICKS</figcaption></figure>' if p.get("imagem") else ''
-        body = f'''<div class="wrap case-breadcrumb"><a href="../index.html#projetos">← Todos os projetos</a><span class="mono">ESTUDO {p['numero']} / 08</span></div><article class="case wrap"><header class="case-hero"><div><p class="eyebrow">{e(p['categoria'])}</p><h1>{e(p['titulo'])}</h1><p class="case-summary">{e(p['resumo'])}</p>{tags(p['stack'])}</div><aside class="case-meta"><span class="status {p['grupo']}">{e(p['status'])}</span><dl><dt>PROJETO</dt><dd>{e(p['subtitulo'])}</dd><dt>CONTEXTO</dt><dd>{'Ecossistema autoral Aurora · Databricks' if p['numero'] < '07' else 'Benchmark autoral reproduzível · Databricks'}</dd><dt>EVIDÊNCIAS</dt><dd>{'Execução validada no Databricks + MLflow' if p['grupo'] == 'implementado' else 'Planejamento e critérios de aceite'}</dd><dt>REPOSITÓRIO</dt><dd><a href="{e(p.get('repo_url', ''))}" rel="noopener noreferrer">Ver código no GitHub ↗</a></dd></dl></aside></header>
-{diagram}
-<nav class="case-nav" aria-label="Conteúdo deste estudo"><a href="#problema">Problema</a><a href="#arquitetura">Arquitetura</a><a href="#resultados">Resultados e limites</a><a href="#material">Material técnico</a></nav>
-<section id="problema" class="case-section two-column"><div><p class="eyebrow">01 / O PROBLEMA</p><h2>Problema</h2></div><div class="prose"><p>{e(p['problema'])}</p><h3>Escopo entregue em produção</h3><p>{e(p['entrega'])}</p></div></section>
-<section id="arquitetura" class="case-section"><p class="eyebrow">02 / ARQUITETURA</p><h2>Fluxo do projeto</h2><ol class="architecture" aria-label="Etapas da arquitetura">{''.join(f'<li><span class="mono">{i+1:02d}</span><strong>{e(v)}</strong></li>' for i,v in enumerate(p['fluxo']))}</ol><div class="two-column decisions"><h3>Decisões técnicas</h3>{bullet(p['decisoes'])}</div></section>
-<section id="resultados" class="case-section"><p class="eyebrow">03 / RESULTADOS E LIMITES</p><h2>{'O que foi medido' if p['resultados'] else 'Como será avaliado'}</h2>{outcome}<p class="prose validation-copy">{e(p['validacao'])}</p><div class="two-column"><div><h3>Limites conhecidos</h3>{bullet(p['limites'])}</div><div><h3>Próximo incremento</h3>{bullet(p['proximos'])}</div></div>{evidence}</section>
-<section id="material" class="case-section"><p class="eyebrow">04 / MATERIAL TÉCNICO</p><div class="section-heading"><h2>Especificação e contratos</h2><a class="button secondary" href="../documentacao/{p['slug']}.html">Ler documentação completa ↗</a></div><div class="code-panel"><div><h3>{e(p['exemplo']['titulo'])}</h3><span class="mono">{e(p['exemplo']['linguagem'])} / {'CONTRATO IMPLEMENTADO' if p['grupo'] == 'implementado' else 'PROPOSTA NÃO EXECUTADA'}</span></div><pre><code>{e(p['exemplo']['codigo'])}</code></pre></div><div class="material-links"><a href="{e(p.get('repo_url', ''))}" rel="noopener noreferrer">Repositório do projeto no GitHub ↗</a><a href="../documentacao/fontes/{p['slug']}.md" download>Especificação em Markdown ↓</a>{'<a href="../documentacao/prompts.html">Ver catálogo de prompts estruturados →</a>' if p['numero'] in ('03','04','05','06') else ''}</div></section>
-<a class="next-project" href="{next_p['slug']}.html"><span class="mono">PRÓXIMO ESTUDO / {next_p['numero']}</span><strong>{e(next_p['titulo'])}</strong><span aria-hidden="true">↗</span></a></article>'''
-        write(f"projetos/{p['slug']}.html", layout(f"{p['subtitulo']} — {PROFILE['nome']}", p['resumo'], body, "../", "projeto", f"projetos/{p['slug']}.html"))
+        outcome = metrics(p['resultados']) if p['resultados'] else ''
+        evidence = f'<a class="text-link" href="../evidencias/{p["evidencia"]}" download>Baixar artefato de execução (JSON) ↓</a>' if p['evidencia'] else ''
+
+        # Only show diagram + photo suggestion slot on the selected projects where visual evidence adds real value
+        foto_info = p.get("sugestao_foto")
+        visual_section = ""
+        if foto_info:
+            diagram_html = f'''<figure class="case-diagram">
+  <img src="../{e(p["imagem"])}" alt="Diagrama técnico de arquitetura: {e(p["titulo"])}" width="800" height="340">
+  <figcaption class="mono">REPRESENTAÇÃO ARQUITETURAL · FLUXO TÉCNICO E MECANISMOS DE CONTROLE</figcaption>
+</figure>''' if p.get("imagem") else ""
+
+            photo_file = ROOT / foto_info["arquivo"]
+            if photo_file.is_file():
+                photo_box = f'''<figure class="case-photo">
+  <img src="../{e(foto_info["arquivo"])}" alt="Captura de tela da implementação: {e(p["titulo"])}" loading="lazy">
+  <figcaption class="mono">CAPTURA DA IMPLEMENTAÇÃO · {e(p["titulo"].upper())}</figcaption>
+</figure>'''
+            else:
+                photo_box = f'''<aside class="photo-slot" aria-label="Espaço reservado para captura de tela do projeto">
+  <div class="photo-slot-header">
+    <span class="mono">ESPAÇO RESERVADO PARA IMAGEM / SCREENSHOT</span>
+    <code>{e(foto_info["arquivo"])}</code>
+  </div>
+  <p><strong>Sugestão de captura para anexar aqui:</strong> {e(foto_info["o_que_mostrar"])}</p>
+  <p class="photo-slot-where"><strong>Onde tirar o print:</strong> {e(foto_info["onde_tirar"])}</p>
+</aside>'''
+            visual_section = diagram_html + photo_box
+
+        body = f'''<div class="wrap case-breadcrumb"><a href="../index.html#projetos">← Voltar aos projetos</a><span class="mono">PROJETO {p['numero']} / 08</span></div><article class="case wrap"><header class="case-hero"><div><p class="eyebrow">{e(p['categoria'])}</p><h1>{e(p['titulo'])}</h1><p class="case-summary">{e(p['resumo'])}</p>{tags(p['stack'])}</div><aside class="case-meta"><span class="status {p['grupo']}">{e(p['status'])}</span><dl><dt>FOCO TÉCNICO</dt><dd>{e(p['subtitulo'])}</dd><dt>REPOSITÓRIO</dt><dd><a href="{e(p.get('repo_url', ''))}" rel="noopener noreferrer">Ver código no GitHub ↗</a></dd></dl></aside></header>
+{visual_section}
+<nav class="case-nav" aria-label="Conteúdo deste estudo"><a href="#problema">Problema &amp; Escopo</a><a href="#arquitetura">Arquitetura &amp; Raciocínio</a><a href="#resultados">Validação &amp; Trade-offs</a><a href="#material">Contratos &amp; Código</a></nav>
+<section id="problema" class="case-section two-column"><div><p class="eyebrow">01 / CONTEXTO E DESAFIO</p><h2>Problema de engenharia</h2></div><div class="prose"><p>{e(p['problema'])}</p><h3>Solução implementada</h3><p>{e(p['entrega'])}</p></div></section>
+<section id="arquitetura" class="case-section"><p class="eyebrow">02 / ARQUITETURA E RACIOCÍNIO TÉCNICO</p><h2>Etapas e decisões de projeto</h2><ol class="architecture" aria-label="Etapas da arquitetura">{''.join(f'<li><span class="mono">{i+1:02d}</span><strong>{e(v)}</strong></li>' for i,v in enumerate(p['fluxo']))}</ol><div class="two-column decisions"><h3>Decisões de engenharia, governança e eficiência</h3>{bullet(p['decisoes'])}</div></section>
+<section id="resultados" class="case-section"><p class="eyebrow">03 / VALIDAÇÃO, TESTES E TRADE-OFFS</p><h2>Verificação da implementação</h2>{outcome}<p class="prose validation-copy">{e(p['validacao'])}</p><div class="two-column"><div><h3>Trade-offs e limites conhecidos</h3>{bullet(p['limites'])}</div><div><h3>Evoluções arquiteturais</h3>{bullet(p['proximos'])}</div></div>{evidence}</section>
+<section id="material" class="case-section"><p class="eyebrow">04 / MATERIAL TÉCNICO</p><div class="section-heading"><h2>Contratos e especificação</h2><a class="button secondary" href="../documentacao/{p['slug']}.html">Ler especificação detalhada ↗</a></div><div class="code-panel"><div><h3>{e(p['exemplo']['titulo'])}</h3><span class="mono">{e(p['exemplo']['linguagem'])} / CONTRATO TÉCNICO</span></div><pre><code>{e(p['exemplo']['codigo'])}</code></pre></div><div class="material-links"><a href="{e(p.get('repo_url', ''))}" rel="noopener noreferrer">Repositório completo no GitHub ↗</a><a href="../documentacao/fontes/{p['slug']}.md" download>Especificação em Markdown ↓</a>{'<a href="../documentacao/prompts.html">Ver catálogo de prompts estruturados →</a>' if p['numero'] in ('03','04','05','06') else ''}</div></section>
+<a class="next-project" href="{next_p['slug']}.html"><span class="mono">PRÓXIMO PROJETO / {next_p['numero']}</span><strong>{e(next_p['titulo'])}</strong><span aria-hidden="true">↗</span></a></article>'''
+        write(f"projetos/{p['slug']}.html", layout(f"{p['titulo']} — {PROFILE['nome']}", p['resumo'], body, "../", "projeto", f"projetos/{p['slug']}.html"))
 
 
 def inline(text):
@@ -322,16 +417,16 @@ def build_docs():
     for p in PROJECTS:
         source_path = ROOT / 'documentacao/fontes' / (p['slug'] + '.md')
         source = source_path.read_text(encoding='utf-8')
-        body = f'''<article class="wrap document"><a class="text-link" href="../projetos/{p['slug']}.html">← Voltar ao estudo</a><header><p class="eyebrow">DOCUMENTAÇÃO TÉCNICA / ESTUDO {p['numero']}</p><h1>Especificação e arquitetura</h1><p class="case-summary">{e(p['subtitulo'])}</p><span class="status {p['grupo']}">{e(p['status'])}</span><p class="scope-note">Documento de arquitetura, contratos de dados, desenho experimental no MLflow e critérios de aceite verificados para o projeto {e(p['subtitulo'])}.</p><a class="button secondary" href="fontes/{p['slug']}.md" download>Baixar Markdown ↓</a></header><div class="markdown">{markdown(source)}</div></article>'''
-        write(f"documentacao/{p['slug']}.html", layout(f"Documentação: {p['subtitulo']} — {PROFILE['nome']}", f"Requisitos, arquitetura, stack, MLflow e critérios de aceite: {p['subtitulo']}.", body, "../", "documento", f"documentacao/{p['slug']}.html"))
+        body = f'''<article class="wrap document"><a class="text-link" href="../projetos/{p['slug']}.html">← Voltar ao projeto</a><header><p class="eyebrow">DOCUMENTAÇÃO TÉCNICA / PROJETO {p['numero']}</p><h1>Especificação e arquitetura</h1><p class="case-summary">{e(p['subtitulo'])}</p><span class="status {p['grupo']}">{e(p['status'])}</span><p class="scope-note">Documento de arquitetura, contratos de dados, desenho experimental e critérios de aceite do projeto {e(p['titulo'])}.</p><a class="button secondary" href="fontes/{p['slug']}.md" download>Baixar Markdown ↓</a></header><div class="markdown">{markdown(source)}</div></article>'''
+        write(f"documentacao/{p['slug']}.html", layout(f"Documentação: {p['titulo']} — {PROFILE['nome']}", f"Requisitos, arquitetura, stack e critérios técnicos: {p['titulo']}.", body, "../", "documento", f"documentacao/{p['slug']}.html"))
     prompt_source = (ROOT / 'documentacao/fontes/prompts.md').read_text(encoding='utf-8')
-    body = '<article class="wrap document"><a class="text-link" href="../projetos/laboratorio-llms.html">← Voltar ao Laboratório de LLMs</a><header><p class="eyebrow">ENGENHARIA DE PROMPTS &amp; EXPERIMENTAÇÃO MLFLOW</p><h1>Prompts estruturados em produção</h1><p class="case-summary">Contratos JSON estritos, ablação entre Foundation Models (Llama 3.3 70B vs. Qwen3 80B), defesa contra prompt injection e system prompt do Agente BIA.</p><span class="status implementado">Validado no MLflow · 60 execuções</span></header><div class="markdown">' + markdown(prompt_source) + '</div></article>'
-    write('documentacao/prompts.html', layout('Prompts estruturados e Experimentação LLM — Beatriz Helena', 'Catálogo de prompts estruturados, contratos JSON, guardrails e resultados medidos no MLflow.', body, '../', 'documento', 'documentacao/prompts.html'))
+    body = '<article class="wrap document"><a class="text-link" href="../projetos/laboratorio-llms.html">← Voltar ao estudo de LLMs</a><header><p class="eyebrow">ENGENHARIA DE PROMPTS &amp; GUARDRAILS</p><h1>Prompts estruturados e contratos</h1><p class="case-summary">Contratos JSON Schema, defesa contra prompt injection, grounding para RAG, revisão de evidências de agentes e calibração de persona (Regra 80/15/5).</p></header><div class="markdown">' + markdown(prompt_source) + '</div></article>'
+    write('documentacao/prompts.html', layout('Prompts estruturados e Contratos LLM — Beatriz Helena', 'Catálogo de prompts estruturados, contratos JSON, guardrails e avaliação sistemática.', body, '../', 'documento', 'documentacao/prompts.html'))
 
 
 def build_cv():
     skills = ''.join(f'<li><strong>{e(x["titulo"])}:</strong> {e(x["descricao"])}</li>' for x in PROFILE['habilidades'])
-    body = f'''<article class="wrap resume"><div class="resume-actions"><a href="index.html">← Voltar ao portfólio</a><button type="button" class="button primary" data-print hidden>Imprimir / salvar como PDF ↓</button></div><header class="resume-header"><p class="eyebrow">CURRÍCULO PROFISSIONAL</p><h1>{e(PROFILE['nome'])}</h1><p class="resume-title">{e(PROFILE['titulo'])}</p><div class="footer-links">{public_links()}</div></header><section><h2>Perfil</h2>{''.join(f'<p>{e(x)}</p>' for x in PROFILE['sobre'])}<p>{e(PROFILE['resumo'])}</p></section><section><h2>Habilidades</h2><ul class="prose-list">{skills}</ul></section><section><h2>Experiência</h2>{trajectory()}</section><section><h2>Formação</h2><h3>{e(PROFILE['formacao']['curso'])}</h3><p>{e(PROFILE['formacao']['instituicao'])}</p></section><section><h2>Projetos em produção e estudos validados</h2><p>Ecossistema Aurora &amp; BIA no Databricks: 8 projetos implementados cobrindo pipeline Medallion (5.000 eventos), gate de qualidade (24/24 asserções), RAG com Vector Search (93,3% top-1), ablação de prompts LLM (100% JSON válido), Agente BIA no Model Serving com MLflow Tracing, automação de boletins (18h/mês → 42s), previsão horária ML (MAE 10,58) e avaliador semântico BEM (92,3% F1).</p><p><a href="index.html#projetos">Ver os oito estudos de caso, arquiteturas e repositórios →</a></p></section></article>'''
+    body = f'''<article class="wrap resume"><div class="resume-actions"><a href="index.html">← Voltar ao portfólio</a><button type="button" class="button primary" data-print hidden>Imprimir / salvar como PDF ↓</button></div><header class="resume-header"><p class="eyebrow">CURRÍCULO PROFISSIONAL</p><h1>{e(PROFILE['nome'])}</h1><p class="resume-title">{e(PROFILE['titulo'])}</p><div class="footer-links">{public_links()}</div></header><section><h2>Perfil</h2>{''.join(f'<p>{e(x)}</p>' for x in PROFILE['sobre'])}<p>{e(PROFILE['resumo'])}</p></section><section><h2>Habilidades e Domínio Técnico</h2><ul class="prose-list">{skills}</ul></section><section><h2>Experiência Profissional</h2>{trajectory()}</section><section><h2>Formação Acadêmica</h2><h3>{e(PROFILE['formacao']['curso'])}</h3><p>{e(PROFILE['formacao']['instituicao'])}</p></section><section><h2>Arquitetura e Projetos Técnicos</h2><p>Implementações práticas cobrindo arquitetura Medallion e ingestão incremental, gates de qualidade e observabilidade, RAG com busca híbrida e re-ranking, engenharia de prompts com Structured Outputs e Evals, orquestração de agentes com guardrails e tracing, automação idempotente e Machine Learning de séries temporais sem vazamento temporal.</p><p><a href="index.html#projetos">Ver os oito projetos técnicos e suas arquiteturas →</a></p></section></article>'''
     write('curriculo.html', layout(f'Currículo — {PROFILE["nome"]}', f'Currículo de {PROFILE["nome"]}, {PROFILE["titulo"]}.', body, page='curriculo', canonical_path='curriculo.html'))
 
 

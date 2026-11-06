@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Avaliador Semântico BEM com Qwen3 Embeddings e Guardrails Estruturais">
+  <defs>
+    <linearGradient id="bg08" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#163c3a"/>
+      <stop offset="100%" stop-color="#122d2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="380" rx="8" fill="url(#bg08)"/>
+  <text x="32" y="42" fill="#e8c996" font-family="Consolas, monospace" font-size="13" letter-spacing="1.5">08 / SEMANTIC EQUIVALENCE EVALUATOR (BEM) · STRUCTURAL GUARDRAILS</text>
+  <rect x="596" y="22" width="172" height="28" rx="14" fill="#25544f" stroke="#5ce0a8" stroke-width="1"/>
+  <text x="614" y="40" fill="#fffef9" font-family="Consolas, monospace" font-size="11">F1: 92,3% · 0 FP CRÍTICO</text>
+
+  <!-- Problem: Raw Cosine vs Guardrails -->
+  <rect x="32" y="88" width="352" height="202" rx="6" fill="#1a403d" stroke="#e8c996" stroke-width="1.5"/>
+  <text x="52" y="116" fill="#e8c996" font-family="Consolas, monospace" font-size="11" font-weight="bold">POR QUE SIMILARIDADE BRUTA FALHA?</text>
+  <rect x="52" y="132" width="312" height="64" rx="4" fill="#3a2825" stroke="#e07a5f" stroke-width="1"/>
+  <text x="64" y="152" fill="#f2a68d" font-family="Consolas, monospace" font-size="11" font-weight="bold">Cosseno Puro (Sem Guardrails):</text>
+  <text x="64" y="170" fill="#fffef9" font-family="Consolas, monospace" font-size="11">"14 dias" vs "30 dias" → sim = 0.94 (ERRO!)</text>
+  <text x="64" y="186" fill="#f2a68d" font-family="Consolas, monospace" font-size="10">7 Falsos Equivalentes Críticos no benchmark</text>
+
+  <rect x="52" y="208" width="312" height="66" rx="4" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="64" y="228" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">Adaptador Calibrado (Qwen3 + Guardrails):</text>
+  <text x="64" y="246" fill="#fffef9" font-family="Consolas, monospace" font-size="11">Verifica Números + Negação + Entidades</text>
+  <text x="64" y="262" fill="#5ce0a8" font-family="Consolas, monospace" font-size="10">0 Falsos Equivalentes Críticos · Precisão 100%</text>
+
+  <!-- Right: Benchmark Comparison -->
+  <rect x="408" y="88" width="360" height="202" rx="6" fill="#122f2d" stroke="#5ce0a8" stroke-width="1.5"/>
+  <text x="428" y="116" fill="#5ce0a8" font-family="Consolas, monospace" font-size="11" font-weight="bold">BENCHMARK DE EQUIVALÊNCIA (TESTE FECHADO)</text>
+
+  <text x="428" y="154" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Exact Match (EM)</text>
+  <rect x="428" y="162" width="75" height="16" rx="3" fill="#e07a5f"/>
+  <text x="512" y="175" fill="#f2a68d" font-family="Consolas, monospace" font-size="11">25,0% F1</text>
+
+  <text x="428" y="202" fill="#bfd0c5" font-family="Segoe UI, sans-serif" font-size="12">Token-F1 Lexical</text>
+  <rect x="428" y="210" width="163" height="16" rx="3" fill="#e8c996"/>
+  <text x="600" y="223" fill="#e8c996" font-family="Consolas, monospace" font-size="11">54,5% F1</text>
+
+  <text x="428" y="250" fill="#5ce0a8" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold">Adaptador BEM + Guardrails (Limiar 0,78)</text>
+  <rect x="428" y="258" width="277" height="18" rx="3" fill="#5ce0a8"/>
+  <text x="712" y="272" fill="#5ce0a8" font-family="Consolas, monospace" font-size="12" font-weight="bold">92,3%</text>
+
+  <text x="32" y="346" fill="#bfd0c5" font-family="Consolas, monospace" font-size="12">Calibração Separada do Teste · Proteção contra Contraditórios Numéricos e de Polaridade</text>
+</svg>
